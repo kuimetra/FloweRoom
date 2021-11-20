@@ -9,20 +9,21 @@
     <title>FloweRoom</title>
 </head>
 <body>
+<script src="js/app.js"></script>
 <main>
     <header>
         <div class="wrapper">
             <ul class="nav">
-                <li><img class="logo" src="img/logo.svg" alt="Logo"></li>
+                <li><a href="#"><img id="logo" src="img/logo.svg" alt="Logo"></a></li>
                 <li><a class="links" href="#features">About</a></li>
                 <li><a class="links" href="#shop">Shop</a></li>
                 <li><a class="links" href="#delivery">Delivery</a></li>
-                <li><a class="links" href="#contact">Contact</a></li>
+                <li><a class="links" href="#footer">Contact</a></li>
                 <li>
                     <div class="counter">
-                        <img class="shopping_cart" src="img/shopping_cart_icon.svg" alt="Shopping cart">
+                        <img src="img/shopping_cart_icon.svg" alt="Shopping cart" height="20" width="20">
                         <div class="counter_area">
-                            <div class="amount">0</div>
+                            <div id="amount">0</div>
                         </div>
                     </div>
                 </li>
@@ -35,7 +36,7 @@
                 <h1 class="hero_title">Treat yourself to stylish, handcrafted bouquets</h1>
                 <h2 class="hero_text">Choose one of the ready-made bouquets or order a unique one that will meet all
                     your wishes.</h2>
-                <button class="white_btn">Shop Now</button>
+                <a class="white_btn" href="#shop">Shop Now</a>
             </div>
         </div>
     </section>
@@ -74,7 +75,13 @@
             <div class="vertical_center">
                 <div class="shop_grid">
                     <div class="shop_grid_item">
-                        <img src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Optimist</p>
                             <div class="bouquet_price">
@@ -83,7 +90,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Verona</p>
                             <div class="bouquet_price">
@@ -92,7 +105,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Warm Up</p>
                             <div class="bouquet_price">
@@ -101,7 +120,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Tangelo</p>
                             <div class="bouquet_price">
@@ -110,7 +135,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Royal</p>
                             <div class="bouquet_price">
@@ -119,7 +150,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Peony</p>
                             <div class="bouquet_price">
@@ -128,8 +165,14 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet" width="261"
-                             height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet" width="261"
+                                 height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Firecracker</p>
                             <div class="bouquet_price">
@@ -138,7 +181,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Regatta</p>
                             <div class="bouquet_price">
@@ -147,7 +196,14 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet" width="261"
+                                 height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Champagne</p>
                             <div class="bouquet_price">
@@ -156,7 +212,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Malora</p>
                             <div class="bouquet_price">
@@ -165,8 +227,14 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet" width="261"
-                             height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet" width="261"
+                                 height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Buttercream</p>
                             <div class="bouquet_price">
@@ -175,7 +243,13 @@
                         </div>
                     </div>
                     <div class="shop_grid_item">
-                        <img src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261" height="327">
+                        <div class="bouquet_image">
+                            <img src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261" height="327">
+                            <div class="add_to_cart" onclick="incrementCartAmount()">
+                                <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
+                                <p class="add_to_cart_text">Add to cart</p>
+                            </div>
+                        </div>
                         <div class="bouquet_info">
                             <p class="bouquet_name">The Juneau</p>
                             <div class="bouquet_price">
@@ -249,7 +323,7 @@
                     </p>
                     <div class="third_row">
                         <h2 class="info_subtitle">Ready to try it out?</h2>
-                        <button class="blue_btn">Contact Us</button>
+                        <a class="blue_btn" href="#footer">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -293,6 +367,7 @@
                         identity while reaching more local flower lovers than ever before, thanks to our loyal and
                         ever-growing audience.</p>
                 </div>
+                <button class="pink_btn">Partner With Us</button>
             </div>
             <div class="vertical_center">
                 <div class="right_side_pic_with_pink_border">
@@ -310,38 +385,48 @@
                     subscriber-only discounts!</h2>
                 <div class="input_row">
                     <form action="#" method="get" id="subscription_form">
-                        <input type="text" id="subscription_email" name="subscription_email"
-                               placeholder="name@address.com">
+                        <input type="email" id="subscription_email" name="subscription_email"
+                               placeholder="name@address.com" required
+                               oninvalid="this.setCustomValidity('Please enter a valid email address!:)')">
                     </form>
                     <button class="blue_btn" type="submit" form="subscription_form" value="Sign Me Up">Sign Me Up
                     </button>
                 </div>
-
                 <p class="mail_subscription_text">We will occasionally send you exclusive offers, updates and news by
                     email. You can unsubscribe at any time.</p>
             </div>
         </div>
     </section>
-    <footer>
+    <footer id="footer">
         <div class="wrapper">
             <div class="vertical_center">
                 <div class="footer_grid">
                     <div class="footer_column">
                         <h2 class="footer_link">Contact Us</h2>
                         <h3 class="support">24/7 Support</h3>
-                        <p class="contacts">(646) 660-5281</p>
-                        <p class="contacts">info@floweroom.com</p>
+                        <a class="contacts" href="tel:(646) 660-5281">(646) 660-5281</a>
+                        <a class="contacts" href="mailto:info@floweroom.com">info@floweroom.com</a>
                     </div>
                     <div class="footer_column">
-                        <h2 class="footer_link">Follow Us</h2>
+                        <h2 class="footer_link">Follow Us on Social</h2>
                         <ul class="social_media">
-                            <li><img class="social_logo" src="img/instagram.svg" alt="Instagram Logo"></li>
-                            <li><img class="social_logo" src="img/twitter.svg" alt="Twitter Logo"></li>
-                            <li><img class="social_logo" src="img/pinterest.svg" alt="Pinterest Logo"></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><img class="social_logo"
+                                                                                          src="img/instagram.svg"
+                                                                                          alt="Instagram Logo"></a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank"><img class="social_logo"
+                                                                                         src="img/facebook.svg"
+                                                                                         alt="Facebook Logo"></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><img class="social_logo"
+                                                                                    src="img/twitter.svg"
+                                                                                    alt="Twitter Logo"></a></li>
+                            <li><a href="https://www.pinterest.com/" target="_blank"><img class="social_logo"
+                                                                                          src="img/pinterest.svg"
+                                                                                          alt="Pinterest Logo"></a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer_column">
-                        <ul class="footer_links_row">
+                        <ul class="footer_links_col">
                             <li><a class="footer_link" href="#features">About Us</a></li>
                             <li><a class="footer_link" href="#shop">Shop All</a></li>
                             <li><a class="footer_link" href="#delivery">Delivery</a></li>
@@ -349,7 +434,7 @@
                         </ul>
                     </div>
                     <div class="footer_column">
-                        <ul class="footer_links_row">
+                        <ul class="footer_links_col">
                             <li><a class="footer_link" href="#">Terms and conditions</a></li>
                             <li><a class="footer_link" href="#">Privacy policy</a></li>
                             <li><a class="footer_link" href="#">Acceptance policy</a></li>

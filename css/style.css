@@ -1,3 +1,51 @@
+/* gopher-regular */
+@font-face {
+    font-family: 'Gopher';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/gopher-regular.eot');
+    src: url('../fonts/gopher-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gopher-regular.woff2') format('woff2'),
+    url('../fonts/gopher-regular.woff') format('woff'),
+    url('../fonts/gopher-regular.ttf') format('truetype');
+}
+
+/* gtwalsheimpro-regular */
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/gtwalsheimpro-regular.eot');
+    src: url('../fonts/gtwalsheimpro-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gtwalsheimpro-regular.woff2') format('woff2'),
+    url('../fonts/gtwalsheimpro-regular.woff') format('woff'),
+    url('../fonts/gtwalsheimpro-regular.ttf') format('truetype');
+}
+
+/* gtwalsheimpro-light */
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/gtwalsheimpro-light.eot');
+    src: url('../fonts/gtwalsheimpro-light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gtwalsheimpro-light.woff2') format('woff2'),
+    url('../fonts/gtwalsheimpro-light.woff') format('woff'),
+    url('../fonts/gtwalsheimpro-light.ttf') format('truetype');
+}
+
+/* gtwalsheimpro-lightoblique */
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../fonts/gtwalsheimpro-lightoblique.eot');
+    src: url('../fonts/gtwalsheimpro-lightoblique.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gtwalsheimpro-lightoblique.woff2') format('woff2'),
+    url('../fonts/gtwalsheimpro-lightoblique.woff') format('woff'),
+    url('../fonts/gtwalsheimpro-lightoblique.ttf') format('truetype');
+}
+
 :root {
     --green: #9AC2A0;
     --lightGreen: #E6F0E7;
@@ -18,9 +66,12 @@
 
 html, body {
     height: 100%;
-    overflow: auto;
     display: flex;
     flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 a, button {
@@ -28,7 +79,7 @@ a, button {
     text-decoration: none;
 }
 
-a, button, .logo {
+a, button, #logo, .add_to_cart {
     cursor: pointer;
 }
 
@@ -97,7 +148,7 @@ header {
     align-items: center;
 }
 
-.amount {
+#amount {
     font: normal normal 20px/20px Gopher, serif;
     text-align: center;
     width: 39px;
@@ -231,8 +282,8 @@ header {
     color: var(--blue);
 }
 
+
 .bouquet_price {
-    position: relative;
     background-image: url("../img/price_tag.svg");
     background-size: 75px;
     width: 75px;
@@ -243,9 +294,69 @@ header {
 .price {
     font: normal 300 22px/22px GT Walsheim Pro, serif;
     text-align: center;
+    width: 53px;
+    height: 22px;
+    margin: 5px 3px 5px 18px;
     color: var(--white);
-    padding: 5px 3px 5px 19px
 }
+
+.bouquet_price:hover {
+    -webkit-animation: shake 0.2s ease-in-out 0.2s infinite alternate;
+}
+
+@-webkit-keyframes shake {
+    from {
+        -webkit-transform: rotate(2deg);
+    }
+    to {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(-3deg);
+    }
+}
+
+/******************** SHOPPING CART START ********************/
+
+.bouquet_image {
+    position: relative;
+}
+
+.add_to_cart {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 7px 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 252, 252, 0.64) 0%, rgba(253, 243, 243, 0.8) 100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.bouquet_image:hover .add_to_cart {
+    visibility: visible;
+    opacity: 1;
+}
+
+.add_to_cart_text {
+    margin-left: 8px;
+    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add_to_cart img, .add_to_cart_text {
+    float: left;
+}
+
+/******************** SHOPPING CART END ********************/
 
 /******************** SHOP END ********************/
 
@@ -467,25 +578,33 @@ header {
     width: 100%;
 }
 
-.work_main_pic {
-    position: relative;
+.work_text {
+    margin-bottom: 12px;
 }
 
-.work_second_pic {
-    position: absolute;
-    top: 247px;
-    left: 319px;
+.pink_btn {
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: var(--brightPink);
+    text-transform: uppercase;
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--white);
+    cursor: pointer;
 }
+
 
 .right_side_pic_with_pink_border {
     float: right;
     position: relative;
     display: inline-block;
     width: 419px;
-    height: 322px;
+    height: 321px;
+    top: 15px;
+    left: 10px;
 }
 
 .right_side_pic_with_pink_border:after {
+    clear: both;
     content: '';
     position: absolute;
     left: -10px;
@@ -494,7 +613,12 @@ header {
     width: 407px;
     height: 305px;
     z-index: -1;
-    clear: both;
+}
+.work_second_pic {
+    display: flex;
+    position: absolute;
+    left: 319px;
+    top: 247px;
 }
 
 /******************** WORK END ********************/
@@ -603,7 +727,15 @@ footer .wrapper {
 .contacts {
     font: normal normal 18px/18px GT Walsheim Pro, serif;
     color: var(--white);
+    display: block;
+}
+
+.footer_column > a {
     margin-bottom: 9px;
+}
+
+.footer_column > a ~ a {
+    margin: 0;
 }
 
 .social_media {
@@ -611,17 +743,16 @@ footer .wrapper {
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
-    width: 149px;
+    max-width: 188px;
     margin-top: 17px;
 }
 
-.footer_links_row {
+.footer_links_col {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
-
-/*.footer_links_row > li > a > .footer_link {*/
-/*    margin-bottom: 100px;*/
-/*}*/
 
 hr {
     display: block;

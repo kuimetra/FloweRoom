@@ -1,0 +1,646 @@
+:root {
+    --green: #9AC2A0;
+    --lightGreen: #E6F0E7;
+    --blue: #25405D;
+    --lightBlue: #6E8093;
+    --brightPink: #E87877;
+    --pink: #FDF3F3;
+    --lightPink: #FFFCFC;
+    --white: #FFFFFF;
+    --gray: #BDBDBD;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+a, button {
+    border: none;
+    text-decoration: none;
+}
+
+a, button, .logo {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+.wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.vertical_center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.horizontal_center {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/******************** HEADER START ********************/
+header {
+    background-color: var(--white);
+    z-index: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    height: 80px;
+}
+
+.links {
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--blue);
+}
+
+.links a:link, .links a:visited, .links a:hover, .links a:active {
+    color: var(--blue);
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+}
+
+.counter_area {
+    margin-left: 8px;
+    width: 53px;
+    height: 26px;
+    background: var(--white);
+    border: 1px solid var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    font: normal normal 20px/20px Gopher, serif;
+    text-align: center;
+    width: 39px;
+    height: 20px;
+    color: var(--brightPink);
+}
+
+/******************** HEADER END ********************/
+
+/******************** HERO START ********************/
+
+#hero .wrapper {
+    position: relative;
+    height: 800px;
+}
+
+#hero {
+    background-image: linear-gradient(225deg, rgba(255, 252, 252, 0.08) 10%, rgba(255, 252, 252, 0.7) 90%), url("../img/info_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 800px;
+}
+
+.hero_title {
+    font: normal normal 64px/67px Gopher, serif;
+    color: var(--blue);
+    max-width: 627px;
+    margin-bottom: 10px;
+}
+
+.hero_text {
+    font: normal normal 22px/27px GT Walsheim Pro, serif;
+    color: var(--blue);
+    max-width: 586px;
+    margin-bottom: 20px;
+}
+
+.white_btn {
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: var(--white);
+    text-transform: uppercase;
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--blue);
+}
+
+/******************** HERO END ********************/
+
+/******************** FEATURES START ********************/
+#features {
+    background-color: var(--lightPink);
+}
+
+#features .wrapper {
+    position: relative;
+    height: 326px;
+}
+
+.features_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 32px;
+}
+
+.frame {
+    position: relative;
+    background-image: url("../img/frame.svg");
+    background-size: 261px;
+    width: 261px;
+    background-repeat: no-repeat;
+}
+
+.feature_title {
+    font: normal normal 40px/42px Gopher, serif;
+    text-transform: capitalize;
+    color: var(--green);
+    max-width: 151px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.feature_subtitle {
+    font: normal normal 25px/25px Gopher, serif;
+    color: var(--blue);
+    max-width: 261px;
+    margin-bottom: 5px;
+}
+
+.feature_text {
+    font: normal 300 19px/26px GT Walsheim Pro, serif;
+    color: var(--blue);
+    max-width: 261px;
+}
+
+/******************** FEATURES END ********************/
+
+/******************** SHOP START ********************/
+
+#shop {
+    background-color: var(--pink);
+}
+
+#shop .wrapper {
+    position: relative;
+    height: 1343px;
+}
+
+.shop_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 40px;
+}
+
+.bouquet_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.bouquet_name {
+    font: normal normal 20px/20px GT Walsheim Pro, serif;
+    text-transform: capitalize;
+    color: var(--blue);
+}
+
+.bouquet_price {
+    position: relative;
+    background-image: url("../img/price_tag.svg");
+    background-size: 75px;
+    width: 75px;
+    height: 32px;
+    background-repeat: no-repeat;
+}
+
+.price {
+    font: normal 300 22px/22px GT Walsheim Pro, serif;
+    text-align: center;
+    color: var(--white);
+    padding: 5px 3px 5px 19px
+}
+
+/******************** SHOP END ********************/
+
+/******************** CUSTOMIZE START ********************/
+
+#customize {
+    background-color: var(--lightPink);
+}
+
+#customize .wrapper {
+    position: relative;
+    height: 461px;
+}
+
+#customize .vertical_center {
+    display: inline-block;
+    width: 100%;
+}
+
+.right_side_text {
+    float: right;
+}
+
+.right_side_text::after {
+    clear: both;
+}
+
+.left_side_pic_with_green_border {
+    position: relative;
+    display: inline-block;
+    width: 420px;
+    height: 323px;
+}
+
+.left_side_pic_with_green_border:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    border: 2px solid var(--green);
+    width: 408px;
+    height: 306px;
+    z-index: -1;
+}
+
+.info_title {
+    font: normal normal 36px/36px Gopher, serif;
+    text-transform: capitalize;
+    color: var(--brightPink);
+    margin-bottom: 8px;
+}
+
+.info_text {
+    max-width: 627px;
+    font: normal 300 20px/29px GT Walsheim Pro, serif;
+    color: var(--blue);
+}
+
+/******************** CUSTOMIZE END ********************/
+
+/******************** DELIVERY START ********************/
+
+#delivery {
+    background-color: var(--pink);
+}
+
+#delivery .wrapper {
+    position: relative;
+    height: 445px;
+}
+
+#delivery .vertical_center {
+    display: inline-block;
+    width: 100%;
+}
+
+.right_side_pic {
+    float: right;
+    position: relative;
+}
+
+.right_side_pic::after {
+    clear: both;
+}
+
+.delivery_main_pic {
+    position: relative;
+}
+
+.delivery_animation_pic {
+    position: absolute;
+    top: 224px;
+    right: 326px;
+}
+
+.rotate {
+    animation: rotation 40s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+/******************** DELIVERY END ********************/
+
+/******************** FLOWER SUBSCRIPTION START ********************/
+
+#flower_subscription {
+    background-color: var(--lightPink);
+}
+
+#flower_subscription .wrapper {
+    position: relative;
+    height: 461px;
+}
+
+#flower_subscription .vertical_center {
+    display: inline-block;
+    width: 100%;
+}
+
+.info_subtitle {
+    font: normal normal 24px/24px Gopher, serif;
+    text-transform: capitalize;
+    color: var(--blue);
+    margin-right: 30px;
+}
+
+.blue_btn {
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: var(--blue);
+    text-transform: uppercase;
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--white);
+}
+
+.third_row {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/******************** FLOWER SUBSCRIPTION END ********************/
+
+/******************** PROMO CODE START ********************/
+
+#promo_code {
+    background-color: var(--lightGreen);
+}
+
+#promo_code .wrapper {
+    position: relative;
+    height: 60px;
+}
+
+.promo_code_text {
+    font: normal normal 22px/22px Gopher, serif;
+    color: var(--blue);
+}
+
+/******************** PROMO CODE END ********************/
+
+/******************** INSTAGRAM START ********************/
+
+#instagram {
+    background-color: var(--lightPink);
+}
+
+#instagram .wrapper {
+    position: relative;
+    height: 740px;
+}
+
+.instagram_title {
+    font: normal normal 36px/36px Gopher, serif;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.instagram_text {
+    font: normal 300 22px/22px GT Walsheim Pro, serif;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.instagram_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+}
+
+#instagram .blue_btn {
+    margin: 20px auto 0;
+    display: block;
+}
+
+/******************** INSTAGRAM END ********************/
+
+/******************** WORK START ********************/
+
+#work {
+    background-color: var(--pink);
+}
+
+#work .wrapper {
+    position: relative;
+    height: 445px;
+}
+
+#work .vertical_center {
+    display: inline-block;
+    width: 100%;
+}
+
+.work_main_pic {
+    position: relative;
+}
+
+.work_second_pic {
+    position: absolute;
+    top: 247px;
+    left: 319px;
+}
+
+.right_side_pic_with_pink_border {
+    float: right;
+    position: relative;
+    display: inline-block;
+    width: 419px;
+    height: 322px;
+}
+
+.right_side_pic_with_pink_border:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -15px;
+    border: 2px solid var(--brightPink);
+    width: 407px;
+    height: 305px;
+    z-index: -1;
+    clear: both;
+}
+
+/******************** WORK END ********************/
+
+/******************** MAIL SUBSCRIPTION START ********************/
+
+#mail_subscription {
+    background-color: var(--white);
+}
+
+#mail_subscription .wrapper {
+    position: relative;
+    height: 291px;
+}
+
+.mail_subscription_title {
+    font: normal normal 36px/36px Gopher, serif;
+    text-transform: capitalize;
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.mail_subscription_subtitle {
+    font: normal normal 22px/22px GT Walsheim Pro, serif;
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.mail_subscription_text {
+    font: italic 300 13px/13px GT Walsheim Pro, serif;
+    color: var(--lightBlue);
+}
+
+.input_row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--gray);
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--gray);
+}
+
+::placeholder {
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--gray);
+}
+
+input:focus {
+    outline: none;
+}
+
+#subscription_form input {
+    border-radius: 0;
+    width: 360px;
+    height: 40px;
+    background: var(--white);
+    border: 1px solid var(--blue);
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--blue);
+    padding: 10px 12px;
+    margin-right: 30px;
+}
+
+/******************** MAIL SUBSCRIPTION END ********************/
+
+/******************** FOOTER START ********************/
+footer {
+    background-color: var(--blue);
+}
+
+footer .wrapper {
+    position: relative;
+    height: 336px;
+}
+
+.footer_grid {
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(261px, 1fr));
+    column-gap: 32px;
+}
+
+.footer_column {
+    grid-column: span 1;
+}
+
+.footer_link {
+    font: normal normal 20px/20px GT Walsheim Pro, serif;
+    color: var(--white);
+}
+
+.support {
+    font: normal normal 16px/16px GT Walsheim Pro, serif;
+    text-transform: capitalize;
+    color: var(--white);
+    margin: 7px 0 12px;
+}
+
+.contacts {
+    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    color: var(--white);
+    margin-bottom: 9px;
+}
+
+.social_media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 149px;
+    margin-top: 17px;
+}
+
+.footer_links_row {
+    list-style-type: none;
+}
+
+/*.footer_links_row > li > a > .footer_link {*/
+/*    margin-bottom: 100px;*/
+/*}*/
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--white);
+    margin: 81px 0 26px;
+}
+
+.copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.copyrights_info {
+    font: normal 300 16px/16px GT Walsheim Pro, serif;
+    color: var(--white);
+}
+
+/******************** FOOTER END ********************/

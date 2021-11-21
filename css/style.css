@@ -113,6 +113,23 @@ header {
 .links {
     font: normal normal 24px/24px Gopher, serif;
     color: var(--blue);
+    position: relative;
+}
+
+.links:after {
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--blue);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.links:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 .nav li {
@@ -707,7 +724,7 @@ hr {
     bottom: 0;
     right: 0;
     width: 0;
-    height: 1.5px;
+    height: 1px;
     background-color: var(--white);
     transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }

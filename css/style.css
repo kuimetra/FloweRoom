@@ -95,7 +95,7 @@ img {
 
 /******************** HEADER START ********************/
 
-header {
+.header {
     background-color: var(--white);
     z-index: 1;
     position: -webkit-sticky;
@@ -208,29 +208,26 @@ header {
     padding: 70px 0;
 }
 
-.features_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 32px;
+.feature_box {
+    grid-column: span 4;
 }
 
 .frame {
     position: relative;
-    background-image: url("../img/frame.svg");
-    background-size: 261px;
-    width: 261px;
-    background-repeat: no-repeat;
+}
+
+.frame img {
+    max-width: 100%;
+    height: auto;
 }
 
 .feature_title {
     font: normal normal 40px/42px Gopher, serif;
     text-transform: capitalize;
     color: var(--green);
-    max-width: 149px;
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -256,12 +253,15 @@ header {
     padding: 75px 0;
 }
 
-.shop_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+#shop .grid_16 {
     grid-template-rows: repeat(3, 1fr);
-    column-gap: 32px;
     row-gap: 40px;
+}
+
+.shop_grid_item {
+    grid-column: span 4;
+    grid-row: span 1;
+    min-width: 229px;
 }
 
 .bouquet_info {
@@ -269,6 +269,7 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-top: 12px;
+    min-width: 261px;
 }
 
 .bouquet_name {
@@ -319,7 +320,7 @@ header {
     position: absolute;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 261px;
     padding: 7px 0;
     left: 0;
     bottom: 0;
@@ -361,6 +362,9 @@ header {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     column-gap: 32px;
+}
+
+#customize .grid_16, #delivery .grid_16, #flower_subscription .grid_16, #work .grid_16 {
     align-items: center;
 }
 
@@ -369,6 +373,8 @@ header {
 }
 
 .left_side_pic_with_green_border {
+    width: 408px;
+    height: 306px;
     box-shadow: 10px 15px 0 -2px var(--white), 10px 15px var(--green);
     transition: box-shadow 0.8s, top 0.8s, left 0.8s;
     position: relative;
@@ -376,6 +382,8 @@ header {
 }
 
 .left_side_pic_with_green_border:hover {
+    width: 407px;
+    height: 305px;
     box-shadow: 0 0 0 -2px var(--white), 0 0 0 0 var(--green);
 }
 
@@ -497,7 +505,7 @@ header {
 
 #instagram {
     background-color: var(--lightPink);
-    margin: 70px 0;
+    padding: 70px 0;
 }
 
 .instagram_title {
@@ -519,6 +527,16 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+}
+
+.instagram_pic img {
+    max-width: 100%;
+    height: auto;
+}
+
+.instagram_pic {
+    grid-column: span 1;
+    position: relative;
 }
 
 #instagram .blue_btn {
@@ -738,3 +756,10 @@ hr {
 }
 
 /******************** FOOTER END ********************/
+
+/*@media screen and (max-width: 1260px) {*/
+/*    .wrapper {*/
+/*        max-width: 960px;*/
+/*        margin: 0 auto;*/
+/*    }*/
+/*}*/

@@ -72,6 +72,7 @@ html, body {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 a, button {
@@ -92,27 +93,14 @@ img {
     margin: 0 auto;
 }
 
-.vertical_center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.horizontal_center {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 /******************** HEADER START ********************/
+
 header {
     background-color: var(--white);
     z-index: 1;
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
+    top: 0;
 }
 
 .nav {
@@ -120,12 +108,15 @@ header {
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
-    height: 80px;
 }
 
 .links {
     font: normal normal 24px/24px Gopher, serif;
     color: var(--blue);
+}
+
+.nav li {
+    padding: 26px 0;
 }
 
 .links a:link, .links a:visited, .links a:hover, .links a:active {
@@ -160,17 +151,12 @@ header {
 
 /******************** HERO START ********************/
 
-#hero .wrapper {
-    position: relative;
-    height: 800px;
-}
-
 #hero {
     background-image: linear-gradient(225deg, rgba(255, 252, 252, 0.08) 10%, rgba(255, 252, 252, 0.7) 90%), url("../img/info_background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 800px;
+    padding: 237px 0;
 }
 
 .hero_title {
@@ -184,7 +170,7 @@ header {
     font: normal normal 22px/27px GT Walsheim Pro, serif;
     color: var(--blue);
     max-width: 586px;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
 }
 
 .white_btn {
@@ -199,13 +185,10 @@ header {
 /******************** HERO END ********************/
 
 /******************** FEATURES START ********************/
+
 #features {
     background-color: var(--lightPink);
-}
-
-#features .wrapper {
-    position: relative;
-    height: 326px;
+    padding: 70px 0;
 }
 
 .features_grid {
@@ -226,8 +209,7 @@ header {
     font: normal normal 40px/42px Gopher, serif;
     text-transform: capitalize;
     color: var(--green);
-    max-width: 151px;
-    margin: 0;
+    max-width: 149px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -254,11 +236,7 @@ header {
 
 #shop {
     background-color: var(--pink);
-}
-
-#shop .wrapper {
-    position: relative;
-    height: 1343px;
+    padding: 75px 0;
 }
 
 .shop_grid {
@@ -282,7 +260,6 @@ header {
     color: var(--blue);
 }
 
-
 .bouquet_price {
     background-image: url("../img/price_tag.svg");
     background-size: 75px;
@@ -301,7 +278,7 @@ header {
 }
 
 .bouquet_price:hover {
-    -webkit-animation: shake 0.2s ease-in-out 0.2s infinite alternate;
+    -webkit-animation: shake 0.35s ease-in-out 0.35s infinite alternate;
 }
 
 @-webkit-keyframes shake {
@@ -332,7 +309,7 @@ header {
     background: linear-gradient(180deg, rgba(255, 252, 252, 0.64) 0%, rgba(253, 243, 243, 0.8) 100%);
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .bouquet_image:hover .add_to_cart {
@@ -352,10 +329,6 @@ header {
     user-select: none;
 }
 
-.add_to_cart img, .add_to_cart_text {
-    float: left;
-}
-
 /******************** SHOPPING CART END ********************/
 
 /******************** SHOP END ********************/
@@ -364,42 +337,33 @@ header {
 
 #customize {
     background-color: var(--lightPink);
+    padding: 70px 0;
 }
 
-#customize .wrapper {
-    position: relative;
-    height: 461px;
+.grid_16 {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    column-gap: 32px;
+    align-items: center;
 }
 
-#customize .vertical_center {
-    display: inline-block;
-    width: 100%;
-}
-
-.right_side_text {
-    float: right;
-}
-
-.right_side_text::after {
-    clear: both;
+#customize_photo {
+    grid-column: 1 / span 6;
 }
 
 .left_side_pic_with_green_border {
+    box-shadow: 10px 15px 0 -2px var(--white), 10px 15px var(--green);
+    transition: box-shadow 0.8s, top 0.8s, left 0.8s;
     position: relative;
-    display: inline-block;
-    width: 420px;
-    height: 323px;
+    cursor: pointer;
 }
 
-.left_side_pic_with_green_border:after {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    border: 2px solid var(--green);
-    width: 408px;
-    height: 306px;
-    z-index: -1;
+.left_side_pic_with_green_border:hover {
+    box-shadow: 0 0 0 -2px var(--white), 0 0 0 0 var(--green);
+}
+
+#customize_text {
+    grid-column: 8 / span 9;
 }
 
 .info_title {
@@ -421,35 +385,26 @@ header {
 
 #delivery {
     background-color: var(--pink);
+    padding: 70px 0;
 }
 
-#delivery .wrapper {
-    position: relative;
-    height: 445px;
+#delivery_photo {
+    grid-column: 11 / span 6;
 }
 
-#delivery .vertical_center {
-    display: inline-block;
-    width: 100%;
+#delivery_text {
+    grid-column: 1 / span 9;
 }
 
-.right_side_pic {
-    float: right;
-    position: relative;
-}
-
-.right_side_pic::after {
-    clear: both;
-}
-
-.delivery_main_pic {
+.delivery_photo_wrap {
     position: relative;
 }
 
 .delivery_animation_pic {
+    display: flex;
     position: absolute;
+    left: -30px;
     top: 224px;
-    right: 326px;
 }
 
 .rotate {
@@ -471,16 +426,15 @@ header {
 
 #flower_subscription {
     background-color: var(--lightPink);
+    padding: 70px 0;
 }
 
-#flower_subscription .wrapper {
-    position: relative;
-    height: 461px;
+#flower_subscription_photo {
+    grid-column: 1 / span 6;
 }
 
-#flower_subscription .vertical_center {
-    display: inline-block;
-    width: 100%;
+#flower_subscription_text {
+    grid-column: 8 / span 9;
 }
 
 .info_subtitle {
@@ -499,7 +453,7 @@ header {
     color: var(--white);
 }
 
-.third_row {
+.subtitle_with_button {
     display: flex;
     align-items: center;
     margin-top: 12px;
@@ -511,16 +465,13 @@ header {
 
 #promo_code {
     background-color: var(--lightGreen);
-}
-
-#promo_code .wrapper {
-    position: relative;
-    height: 60px;
+    padding: 19px 0;
 }
 
 .promo_code_text {
     font: normal normal 22px/22px Gopher, serif;
     color: var(--blue);
+    text-align: center;
 }
 
 /******************** PROMO CODE END ********************/
@@ -529,11 +480,7 @@ header {
 
 #instagram {
     background-color: var(--lightPink);
-}
-
-#instagram .wrapper {
-    position: relative;
-    height: 740px;
+    margin: 70px 0;
 }
 
 .instagram_title {
@@ -541,12 +488,14 @@ header {
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .instagram_text {
     font: normal 300 22px/22px GT Walsheim Pro, serif;
     color: var(--blue);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .instagram_grid {
@@ -558,6 +507,7 @@ header {
 #instagram .blue_btn {
     margin: 20px auto 0;
     display: block;
+    width: 200px;
 }
 
 /******************** INSTAGRAM END ********************/
@@ -566,54 +516,38 @@ header {
 
 #work {
     background-color: var(--pink);
+    padding: 70px 0;
 }
 
-#work .wrapper {
-    position: relative;
-    height: 445px;
+#work_photo {
+    grid-column: 11 / span 6;
 }
 
-#work .vertical_center {
-    display: inline-block;
-    width: 100%;
-}
-
-.work_text {
-    margin-bottom: 12px;
+#work_text {
+    grid-column: 1 / span 9;
 }
 
 .pink_btn {
+    margin-top: 12px;
     display: inline-block;
     padding: 8px 30px;
     background-color: var(--brightPink);
     text-transform: uppercase;
     font: normal normal 24px/24px Gopher, serif;
     color: var(--white);
+}
+
+.right_side_pic_with_pink_border {
+    box-shadow: -10px -15px 0 -2px var(--pink), -10px -15px var(--brightPink);
+    transition: box-shadow 0.8s, top 0.8s, left 0.8s;
+    position: relative;
     cursor: pointer;
 }
 
-
-.right_side_pic_with_pink_border {
-    float: right;
-    position: relative;
-    display: inline-block;
-    width: 419px;
-    height: 321px;
-    top: 15px;
-    left: 10px;
+.right_side_pic_with_pink_border:hover {
+    box-shadow: 0 0 0 -2px var(--pink), 0 0 0 0 var(--brightPink);
 }
 
-.right_side_pic_with_pink_border:after {
-    clear: both;
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: -15px;
-    border: 2px solid var(--brightPink);
-    width: 407px;
-    height: 305px;
-    z-index: -1;
-}
 .work_second_pic {
     display: flex;
     position: absolute;
@@ -627,11 +561,7 @@ header {
 
 #mail_subscription {
     background-color: var(--white);
-}
-
-#mail_subscription .wrapper {
-    position: relative;
-    height: 291px;
+    margin: 70px 0;
 }
 
 .mail_subscription_title {
@@ -692,24 +622,18 @@ input:focus {
 /******************** MAIL SUBSCRIPTION END ********************/
 
 /******************** FOOTER START ********************/
+
 footer {
     background-color: var(--blue);
 }
 
-footer .wrapper {
-    position: relative;
-    height: 336px;
-}
-
-.footer_grid {
-    margin-top: 75px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(261px, 1fr));
-    column-gap: 32px;
+#footer .grid_16 {
+    align-items: unset;
+    padding: 75px 0;
 }
 
 .footer_column {
-    grid-column: span 1;
+    grid-column: span 4;
 }
 
 .footer_link {
@@ -721,7 +645,7 @@ footer .wrapper {
     font: normal normal 16px/16px GT Walsheim Pro, serif;
     text-transform: capitalize;
     color: var(--white);
-    margin: 7px 0 12px;
+    margin: 10px 0 13px;
 }
 
 .contacts {
@@ -731,7 +655,7 @@ footer .wrapper {
 }
 
 .footer_column > a {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 .footer_column > a ~ a {
@@ -751,7 +675,7 @@ footer .wrapper {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 hr {
@@ -759,19 +683,41 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid var(--white);
-    margin: 81px 0 26px;
 }
 
 .copyrights {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
+    padding: 29px 0;
 }
 
 .copyrights_info {
     font: normal 300 16px/16px GT Walsheim Pro, serif;
     color: var(--white);
+}
+
+.underline_animation {
+    position: relative;
+}
+
+.underline_animation::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--white);
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .underline_animation:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
 }
 
 /******************** FOOTER END ********************/

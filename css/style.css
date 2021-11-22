@@ -217,10 +217,6 @@ img {
     justify-content: center;
 }
 
-.feature_box {
-    grid-column: span 4;
-}
-
 .frame {
     position: relative;
     background-image: url("../img/frame.svg");
@@ -824,30 +820,9 @@ hr {
         height: 18px;
     }
 
-    #logo {
-        width: 190px;
-        height: 26px;
-    }
-
     .links {
         font-size: 22px;
         line-height: 22px;
-    }
-
-    .nav li {
-        padding: 27px 0;
-    }
-
-    .counter img {
-        width: 18px;
-        height: 18px;
-    }
-
-    #amount {
-        font-size: 18px;
-        line-height: 18px;
-        width: 45px;
-        height: 18px;
     }
 
     .hero_title {
@@ -864,13 +839,13 @@ hr {
         line-height: 25px;
     }
 
-    .white_btn, .blue_btn, pink_btn {
+    .white_btn, .blue_btn, .pink_btn {
         font-size: 22px;
         line-height: 22px;
     }
 
     .frame {
-        background-image: url("../img/frame_ld.svg");
+        background-image: url("../img/frame_d.svg");
         background-size: 216px;
         width: 216px;
         height: 170px;
@@ -913,7 +888,7 @@ hr {
     }
 
     .bouquet_price {
-        background-image: url("../img/price_tag_ld.svg");
+        background-image: url("../img/price_tag_d.svg");
         background-size: 70px;
         width: 70px;
         height: 30px;
@@ -948,6 +923,7 @@ hr {
     .left_side_pic_with_green_border {
         width: 340px;
         height: 255px;
+        box-shadow: 8px 12px 0 -2px var(--white), 8px 12px var(--green);
     }
 
     .left_side_pic_with_green_border:hover {
@@ -1006,6 +982,7 @@ hr {
     .right_side_pic_with_pink_border {
         width: 340px;
         height: 255px;
+        box-shadow: -8px -12px 0 -2px var(--pink), -8px -12px var(--brightPink);
     }
 
     .right_side_pic_with_pink_border:hover {
@@ -1105,3 +1082,58 @@ hr {
         padding: 25px 0;
     }
 }
+
+/*@media screen and (max-width: 1020px) {*/
+/*    .wrapper {*/
+/*        max-width: 720px;*/
+/*    }*/
+
+/*    #logo {*/
+/*        width: 185px;*/
+/*        height: 24px;*/
+/*    }*/
+
+/*    .links {*/
+/*        font-size: 20px;*/
+/*        line-height: 20px;*/
+/*    }*/
+
+/*    .nav li {*/
+/*        padding: 23px 0;*/
+/*    }*/
+
+/*    .counter img {*/
+/*        width: 16px;*/
+/*        height: 16px;*/
+/*    }*/
+
+/*    #amount {*/
+/*        font-size: 16px;*/
+/*        line-height: 16px;*/
+/*        width: 41px;*/
+/*        height: 16px;*/
+/*    }*/
+
+/*    .links {*/
+/*        font-size: 20px;*/
+/*        line-height: 20px;*/
+/*    }*/
+
+/*    .hero_title {*/
+/*        max-width: 546px;*/
+/*        font-size: 56px;*/
+/*        line-height: 59px;*/
+/*    }*/
+
+/*    .hero_text {*/
+/*        max-width: 475px;*/
+/*        margin-bottom: 10px;*/
+/*        font-size: 18px;*/
+/*        line-height: 23px;*/
+/*    }*/
+
+/*    .white_btn, .blue_btn, .pink_btn {*/
+/*        font-size: 20px;*/
+/*        line-height: 20px;*/
+/*    }*/
+/*}*/

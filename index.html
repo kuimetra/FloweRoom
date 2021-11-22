@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="FloweRoom: Same day flower delivery">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <title>FloweRoom</title>
 </head>
 <body>
 <script src="js/app.js"></script>
 <main>
-    <header class="header">
+    <header id="header">
         <div class="wrapper">
             <ul class="nav">
                 <li><a href="#"><img id="logo" src="img/logo.svg" alt="Logo" height="28" width="196"></a></li>
@@ -42,10 +43,9 @@
     </section>
     <section id="features">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div class="feature_box">
                     <div class="frame">
-                        <img src="img/frame.svg" alt="Frame" height="186" width="261">
                         <h1 class="feature_title">More Than Just A Flowers</h1>
                     </div>
                 </div>
@@ -73,10 +73,11 @@
     </section>
     <section id="shop">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="shop_grid">
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet"
+                             width="261" height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -91,7 +92,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -106,7 +108,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -121,7 +124,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -136,7 +140,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -151,7 +156,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -166,7 +172,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet" width="261"
+                        <img class="bouquet_img" src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet"
+                             width="261"
                              height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
@@ -182,7 +189,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -197,7 +205,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet" width="261"
+                        <img class="bouquet_img" src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet"
+                             width="261"
                              height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
@@ -213,7 +222,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -228,7 +238,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet" width="261"
+                        <img class="bouquet_img" src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet"
+                             width="261"
                              height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
@@ -244,7 +255,8 @@
                 </div>
                 <div class="shop_grid_item">
                     <div class="bouquet_image">
-                        <img src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261" height="327">
+                        <img class="bouquet_img" src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261"
+                             height="327">
                         <div class="add_to_cart" onclick="incrementCartAmount()">
                             <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
                             <p class="add_to_cart_text">Add to cart</p>
@@ -262,7 +274,7 @@
     </section>
     <section id="customize">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div id="customize_photo">
                     <div class="left_side_pic_with_green_border">
                         <img src="img/customize.png" alt="Florist makes a bouquet" width="408" height="306">
@@ -283,7 +295,7 @@
     </section>
     <section id="delivery">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div id="delivery_text">
                     <h1 class="info_title">Call us, we&#146;ll be there</h1>
                     <p class="info_text">Life happens and then suddenly you need to send a gift. No need to stress,
@@ -306,7 +318,7 @@
     </section>
     <section id="flower_subscription">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div id="flower_subscription_photo">
                     <div class="left_side_pic_with_green_border">
                         <img src="img/flower_subscription.png" alt="Bouquet making process" width="408" height="306">
@@ -354,7 +366,7 @@
     </section>
     <section id="work">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div id="work_text">
                     <h1 class="info_title">Are you a passionate local florist?</h1>
                     <p class="info_text">We&#146;re always looking for talented independent florists to join the
@@ -365,8 +377,10 @@
                 </div>
                 <div id="work_photo">
                     <div class="right_side_pic_with_pink_border">
-                        <img class="work_main_pic" src="img/work.png" alt="FloweRoom flower store" width="407"
-                             height="305">
+                        <div class="work_main_pic">
+                            <img src="img/work.png" alt="FloweRoom flower store" width="407"
+                                 height="305">
+                        </div>
                         <img class="work_second_pic" src="img/elipse.svg" alt="Elipse Icon" width="125" height="76">
                     </div>
                 </div>
@@ -393,7 +407,7 @@
     </section>
     <footer id="footer">
         <div class="wrapper">
-            <div class="grid_16">
+            <div class="grid">
                 <div class="footer_column">
                     <h2 class="footer_link">Contact Us</h2>
                     <h3 class="support">24/7 Support</h3>

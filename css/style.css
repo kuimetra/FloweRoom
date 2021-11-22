@@ -207,6 +207,16 @@ img {
     padding: 70px 0;
 }
 
+#features .grid {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 32px;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+}
+
 .feature_box {
     grid-column: span 4;
 }
@@ -774,289 +784,324 @@ hr {
 
 /******************** FOOTER END ********************/
 
-/*@media screen and (max-width: 1260px) {*/
-/*    .wrapper {*/
-/*        max-width: 960px;*/
-/*    }*/
-
-/*    #logo {*/
-/*        width: 190px;*/
-/*        height: 26px;*/
-/*    }*/
-
-/*    .links {*/
-/*        font-size: 22px;*/
-/*        line-height: 22px;*/
-/*    }*/
-
-/*    .nav li {*/
-/*        padding: 27px 0;*/
-/*    }*/
-
-/*    .counter img {*/
-/*        width: 18px;*/
-/*        height: 18px;*/
-/*    }*/
-
-/*    #amount {*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*        width: 45px;*/
-/*        height: 18px;*/
-/*    }*/
-
-/*    .hero_title {*/
-/*        max-width: 585px;*/
-/*        margin-bottom: 8px;*/
-/*        font-size: 60px;*/
-/*        line-height: 63px;*/
-/*    }*/
-
-/*    .hero_text {*/
-/*        max-width: 528px;*/
-/*        margin-bottom: 15px;*/
-/*        font-size: 20px;*/
-/*        line-height: 25px;*/
-/*    }*/
-
-/*    .white_btn, .blue_btn, pink_btn {*/
-/*        font-size: 22px;*/
-/*        line-height: 22px;*/
-/*    }*/
-
-/*    .frame {*/
-/*        background-image: url("../img/frame_ld.svg");*/
-/*        background-size: 216px;*/
-/*        width: 216px;*/
-/*        height: 170px;*/
-/*        background-repeat: no-repeat;*/
-/*    }*/
-
-/*    .feature_title {*/
-/*        font-size: 36px;*/
-/*        line-height: 38px;*/
-/*    }*/
-
-/*    .feature_subtitle {*/
-/*        font-size: 21px;*/
-/*        line-height: 21px;*/
-/*        max-width: 216px;*/
-/*    }*/
-
-/*    .feature_text {*/
-/*        font-size: 16px;*/
-/*        line-height: 24px;*/
-/*        max-width: 216px;*/
-/*    }*/
-
-/*    #shop .grid {*/
-/*        row-gap: 35px;*/
-/*    }*/
-
-/*    .bouquet_img {*/
-/*        width: 216px;*/
-/*        height: auto;*/
-/*    }*/
-
-/*    .bouquet_info {*/
-/*        margin-top: 9px;*/
-/*    }*/
-
-/*    .bouquet_name {*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*    }*/
-
-/*    .bouquet_price {*/
-/*        background-image: url("../img/price_tag_ld.svg");*/
-/*        background-size: 70px;*/
-/*        width: 70px;*/
-/*        height: 30px;*/
-/*    }*/
-
-/*    .price {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*        width: 48px;*/
-/*        height: 20px;*/
-/*    }*/
-
-/*    .add_to_cart img {*/
-/*        width: 16px;*/
-/*        height: 16px;*/
-/*    }*/
-
-/*    .add_to_cart {*/
-/*        padding: 6px 0;*/
-/*    }*/
-
-/*    .add_to_cart_text {*/
-/*        font-size: 16px;*/
-/*        line-height: 16px;*/
-/*    }*/
-
-/*    .left_side_pic_with_green_border img {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .left_side_pic_with_green_border {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .left_side_pic_with_green_border:hover {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .info_title {*/
-/*        font-size: 31px;*/
-/*        line-height: 31px;*/
-/*        margin-bottom: 5px;*/
-/*    }*/
-
-/*    .info_text {*/
-/*        max-width: 526px;*/
-/*        font-size: 17px;*/
-/*        line-height: 25px;*/
-/*    }*/
-
-/*    .delivery_main_pic {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .delivery_animation_pic {*/
-/*        width: 93px;*/
-/*        height: 93px;*/
-/*        left: -25px;*/
-/*        top: 187px;*/
-/*    }*/
-
-/*    .promo_code_text {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*    }*/
-
-/*    .instagram_title {*/
-/*        font-size: 31px;*/
-/*        line-height: 31px;*/
-/*    }*/
-
-/*    #instagram .blue_btn {*/
-/*        width: 188px;*/
-/*    }*/
-
-/*    .work_main_pic img {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .work_second_pic {*/
-/*        width: 104px;*/
-/*        height: 63px;*/
-/*    }*/
-
-/*    .right_side_pic_with_pink_border {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .right_side_pic_with_pink_border:hover {*/
-/*        width: 340px;*/
-/*        height: 255px;*/
-/*    }*/
-
-/*    .work_second_pic {*/
-/*        left: 266px;*/
-/*        top: 206px;*/
-/*    }*/
-
-/*    .mail_subscription_title {*/
-/*        font-size: 31px;*/
-/*        line-height: 31px;*/
-/*    }*/
-
-/*    .mail_subscription_subtitle {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*    }*/
-
-/*    .mail_subscription_text {*/
-/*        font-size: 12px;*/
-/*        line-height: 12px;*/
-/*    }*/
-
-/*    ::-webkit-input-placeholder { !* Edge *!*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*    }*/
-
-/*    :-ms-input-placeholder { !* Internet Explorer *!*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*    }*/
-
-/*    ::placeholder {*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*    }*/
-
-/*    #subscription_form input {*/
-/*        height: 38px;*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*        width: 330px;*/
-/*    }*/
-
-/*    #footer .grid {*/
-/*        padding: 60px 0;*/
-/*    }*/
-
-/*    .footer_link {*/
-/*        font-size: 18px;*/
-/*        line-height: 18px;*/
-/*    }*/
-
-/*    .support {*/
-/*        font-size: 14px;*/
-/*        line-height: 14px;*/
-/*        margin: 9px 0 12px;*/
-/*    }*/
-
-/*    .contacts {*/
-/*        font-size: 16px;*/
-/*        line-height: 16px;*/
-/*    }*/
-
-/*    .footer_column > a {*/
-/*        margin-bottom: 8px;*/
-/*    }*/
-
-/*    .social_media {*/
-/*        max-width: 173px;*/
-/*        margin-top: 15px;*/
-/*    }*/
-
-/*    .footer_links_col {*/
-/*        gap: 7px;*/
-/*    }*/
-
-/*    .copyrights_info {*/
-/*        font-size: 14px;*/
-/*        line-height: 14px;*/
-/*    }*/
-
-/*    .social_logo {*/
-/*        width: 32px;*/
-/*        height: 32px;*/
-/*    }*/
-
-/*    .copyrights {*/
-/*        display: flex;*/
-/*        align-items: center;*/
-/*        justify-content: space-between;*/
-/*        padding: 25px 0;*/
-/*    }*/
+/*@media (max-width: 576px) {*/
 /*}*/
+
+/*@media (max-width: 768px) {*/
+/*}*/
+
+/*@media (max-width: 992px) {*/
+/*}*/
+
+@media screen and (max-width: 1260px) {
+    .wrapper {
+        max-width: 960px;
+    }
+
+    #logo {
+        width: 190px;
+        height: 26px;
+    }
+
+    .links {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .nav li {
+        padding: 27px 0;
+    }
+
+    .counter img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #amount {
+        font-size: 18px;
+        line-height: 18px;
+        width: 45px;
+        height: 18px;
+    }
+
+    #logo {
+        width: 190px;
+        height: 26px;
+    }
+
+    .links {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .nav li {
+        padding: 27px 0;
+    }
+
+    .counter img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #amount {
+        font-size: 18px;
+        line-height: 18px;
+        width: 45px;
+        height: 18px;
+    }
+
+    .hero_title {
+        max-width: 585px;
+        margin-bottom: 8px;
+        font-size: 60px;
+        line-height: 63px;
+    }
+
+    .hero_text {
+        max-width: 528px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .white_btn, .blue_btn, pink_btn {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .frame {
+        background-image: url("../img/frame_ld.svg");
+        background-size: 216px;
+        width: 216px;
+        height: 170px;
+        background-repeat: no-repeat;
+    }
+
+    .feature_title {
+        font-size: 36px;
+        line-height: 38px;
+    }
+
+    .feature_subtitle {
+        font-size: 21px;
+        line-height: 21px;
+        max-width: 216px;
+    }
+
+    .feature_text {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 216px;
+    }
+
+    #shop .grid {
+        row-gap: 35px;
+    }
+
+    .bouquet_img {
+        width: 216px;
+        height: auto;
+    }
+
+    .bouquet_info {
+        margin-top: 9px;
+    }
+
+    .bouquet_name {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .bouquet_price {
+        background-image: url("../img/price_tag_ld.svg");
+        background-size: 70px;
+        width: 70px;
+        height: 30px;
+    }
+
+    .price {
+        font-size: 20px;
+        line-height: 20px;
+        width: 48px;
+        height: 20px;
+    }
+
+    .add_to_cart img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .add_to_cart {
+        padding: 6px 0;
+    }
+
+    .add_to_cart_text {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .left_side_pic_with_green_border img {
+        width: 340px;
+        height: 255px;
+    }
+
+    .left_side_pic_with_green_border {
+        width: 340px;
+        height: 255px;
+    }
+
+    .left_side_pic_with_green_border:hover {
+        width: 340px;
+        height: 255px;
+    }
+
+    .info_title {
+        font-size: 31px;
+        line-height: 31px;
+        margin-bottom: 5px;
+    }
+
+    .info_text {
+        max-width: 526px;
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .delivery_main_pic {
+        width: 340px;
+        height: 255px;
+    }
+
+    .delivery_animation_pic {
+        width: 93px;
+        height: 93px;
+        left: -25px;
+        top: 187px;
+    }
+
+    .promo_code_text {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .instagram_title {
+        font-size: 31px;
+        line-height: 31px;
+    }
+
+    #instagram .blue_btn {
+        width: 188px;
+    }
+
+    .work_main_pic img {
+        width: 340px;
+        height: 255px;
+    }
+
+    .work_second_pic {
+        width: 104px;
+        height: 63px;
+    }
+
+    .right_side_pic_with_pink_border {
+        width: 340px;
+        height: 255px;
+    }
+
+    .right_side_pic_with_pink_border:hover {
+        width: 340px;
+        height: 255px;
+    }
+
+    .work_second_pic {
+        left: 266px;
+        top: 206px;
+    }
+
+    .mail_subscription_title {
+        font-size: 31px;
+        line-height: 31px;
+    }
+
+    .mail_subscription_subtitle {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .mail_subscription_text {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    ::-webkit-input-placeholder { /* Edge */
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer */
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    ::placeholder {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    #subscription_form input {
+        height: 38px;
+        font-size: 18px;
+        line-height: 18px;
+        width: 330px;
+    }
+
+    #footer .grid {
+        padding: 60px 0;
+    }
+
+    .footer_link {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .support {
+        font-size: 14px;
+        line-height: 14px;
+        margin: 9px 0 12px;
+    }
+
+    .contacts {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .footer_column > a {
+        margin-bottom: 8px;
+    }
+
+    .social_media {
+        max-width: 173px;
+        margin-top: 15px;
+    }
+
+    .footer_links_col {
+        gap: 7px;
+    }
+
+    .copyrights_info {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .social_logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .copyrights {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 0;
+    }
+}

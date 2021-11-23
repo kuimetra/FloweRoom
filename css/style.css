@@ -163,6 +163,96 @@ img {
     color: var(--brightPink);
 }
 
+.cart-container {
+    position: absolute;
+    overflow-y: scroll;
+    background: var(--white);
+    width: 411px;
+    height: 800px;
+    top: 0;
+    right: 0;
+    box-shadow: -8px 8px 16px rgba(37, 64, 93, 0.2);
+    /*display: none;*/
+}
+
+.cart-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.cart-list {
+    padding: 0 25px;
+}
+
+#cart_title {
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--blue);
+}
+
+.cart-item-info {
+    float: left;
+    padding: 15px 22px;
+}
+
+.cart-item-name {
+    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+    margin-bottom: 13px;
+}
+
+.cart-item-price {
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--blue);
+}
+
+.total_label h4, .total_price span {
+    font: normal 300 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+}
+
+.total_label h4:last-child, #cart_order_total {
+    font-weight: normal;
+}
+
+/* js related class */
+.show-cart-container {
+    display: block;
+}
+
+.cart-item {
+    width: 381px;
+    height: 125px;
+    border: 1px solid var(--blue);
+    margin-bottom: 30px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-del-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.cart-item img {
+    width: 125px;
+    float: left;
+}
+
+.cart-item-info span {
+    display: block;
+}
+
 /******************** HEADER END ********************/
 
 /******************** HERO START ********************/
@@ -490,6 +580,21 @@ img {
     text-transform: uppercase;
     font: normal normal 24px/24px Gopher, serif;
     color: var(--white);
+}
+
+.blue_btn:active {
+    outline: 1px dashed var(--blue);
+    outline-offset: 2px;
+}
+
+.white_btn:active {
+    outline: 1px dashed var(--white);
+    outline-offset: 2px;
+}
+
+.pink_btn:active {
+    outline: 1px dashed var(--brightPink);
+    outline-offset: 2px;
 }
 
 .subtitle_with_button {

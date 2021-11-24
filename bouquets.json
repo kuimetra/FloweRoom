@@ -1,0 +1,74 @@
+[
+  {
+    "imgSrc": "img/the_optimist_bouquet.png",
+    "imgAlt": "The Optimist Bouquet",
+    "name": "The Optimist",
+    "price": "80"
+  },
+  {
+    "imgSrc": "img/the_verona_bouquet.png",
+    "imgAlt": "The Verona Bouquet",
+    "name": "The Verona",
+    "price": "72"
+  },
+  {
+    "imgSrc": "img/the_warm_up_bouquet.png",
+    "imgAlt": "The Warm Up Bouquet",
+    "name": "The Warm Up",
+    "price": "88"
+  },
+  {
+    "imgSrc": "img/the_tangelo_bouquet.png",
+    "imgAlt": "The Tangelo Bouquet",
+    "name": "The Tangelo",
+    "price": "70"
+  },
+  {
+    "imgSrc": "img/the_royal_bouquet.png",
+    "imgAlt": "The Royal Bouquet",
+    "name": "The Royal",
+    "price": "120"
+  },
+  {
+    "imgSrc": "img/the_peony_bouquet.png",
+    "imgAlt": "The Peony Bouquet",
+    "name": "The Peony",
+    "price": "75"
+  },
+  {
+    "imgSrc": "img/the_firecracker_bouquet.png",
+    "imgAlt": "The Firecracker Bouquet",
+    "name": "The Firecracker",
+    "price": "62"
+  },
+  {
+    "imgSrc": "img/the_regatta_bouquet.png",
+    "imgAlt": "The Regatta Bouquet",
+    "name": "The Regatta",
+    "price": "105"
+  },
+  {
+    "imgSrc": "img/the_champagne_bouquet.png",
+    "imgAlt": "The Champagne Bouquet",
+    "name": "The Champagne",
+    "price": "96"
+  },
+  {
+    "imgSrc": "img/the_malora_bouquet.png",
+    "imgAlt": "The Malora Bouquet",
+    "name": "The Malora",
+    "price": "104"
+  },
+  {
+    "imgSrc": "img/the_buttercream_bouquet.png",
+    "imgAlt": "The Buttercream Bouquet",
+    "name": "The Buttercream",
+    "price": "83"
+  },
+  {
+    "imgSrc": "img/the_juneau_bouquet.png",
+    "imgAlt": "The Juneau Bouquet",
+    "name": "The Juneau",
+    "price": "135"
+  }
+]

@@ -140,9 +140,10 @@ img {
     color: var(--blue);
 }
 
-.counter {
+#cart_area {
     display: flex;
     align-items: center;
+    background: none;
 }
 
 .counter_area {
@@ -163,95 +164,199 @@ img {
     color: var(--brightPink);
 }
 
-.cart-container {
+.cart_container {
     position: absolute;
-    overflow-y: scroll;
     background: var(--white);
-    width: 411px;
-    height: 800px;
+    width: 431px;
+    min-height: 100vh;
     top: 0;
     right: 0;
     box-shadow: -8px 8px 16px rgba(37, 64, 93, 0.2);
-    /*display: none;*/
-}
-
-.cart-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.cart-container::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-}
-
-.cart-list {
     padding: 0 25px;
+    display: none;
+}
+
+#cart_header {
+    padding: 28px 0;
+    display: flex;
+    background-color: var(--white);
+    z-index: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 #cart_title {
     font: normal normal 24px/24px Gopher, serif;
     color: var(--blue);
+    margin: 0 auto;
 }
 
-.cart-item-info {
-    float: left;
-    padding: 15px 22px;
+#cart_close_btn {
+    border: none;
+    background: none;
+    float: right;
 }
 
-.cart-item-name {
-    font: normal normal 18px/18px GT Walsheim Pro, serif;
-    color: var(--blue);
-    margin-bottom: 13px;
+#cart_main {
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
 }
 
-.cart-item-price {
-    font: normal 300 20px/20px GT Walsheim Pro, serif;
-    color: var(--blue);
+#cart_main::-webkit-scrollbar {
+    width: 0;
 }
 
-.total_label h4, .total_price span {
-    font: normal 300 18px/18px GT Walsheim Pro, serif;
-    color: var(--blue);
-}
+/*#cart_main::-webkit-scrollbar-thumb {*/
+/*    background: rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 15px;*/
+/*    -webkit-border-radius: 15px;*/
+/*    -moz-border-radius: 15px;*/
+/*    -ms-border-radius: 15px;*/
+/*    -o-border-radius: 15px;*/
+/*}*/
 
-.total_label h4:last-child, #cart_order_total {
-    font-weight: normal;
-}
-
-/* js related class */
-.show-cart-container {
-    display: block;
-}
-
-.cart-item {
-    width: 381px;
-    height: 125px;
+.cart_item {
+    width: 100%;
+    height: 127px;
     border: 1px solid var(--blue);
     margin-bottom: 30px;
 }
 
-.cart-item:last-child {
-    border-bottom: none;
-}
-
-.cart-item-del-btn {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-}
-
-.cart-item img {
-    width: 125px;
+.cart_item img {
+    height: 100%;
     float: left;
 }
 
-.cart-item-info span {
+.cart_item_info {
+    float: left;
+    margin-top: 15px;
+    margin-left: 22px;
+}
+
+.cart_item_name {
+    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+}
+
+.cart_item_amount {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: flex;
+}
+
+.increment_decrement_counter {
+    width: 91px;
+    height: 30px;
+    background: var(--white);
+    border: 1px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reduce_amount {
+    background-image: url("../img/minus_icon.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+}
+
+.product_quantity {
+    font: normal normal 18px/18px Gopher, serif;
+    color: var(--blue);
+    width: 35px;
+    height: 18px;
+    text-align: center;
+    border: 0;
+}
+
+.expand_amount {
+    background-image: url("../img/plus_icon.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+}
+
+.cart_item_del_btn {
+    background-image: url("../img/trash_icon.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+}
+
+.cart_item_price {
+    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    color: var(--blue);
+}
+
+#promo_code_form input, #zip_code_form input {
+    border-radius: 0;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--blue);
+    font: normal 300 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+    padding: 11px 12px;
+    margin-bottom: 3px;
+}
+
+.apply_code {
+    font: normal 300 13px/13px GT Walsheim Pro, serif;
+    color: var(--lightBlue);
+    background: none;
+    padding: 0 12px;
+    float: right;
+    margin-bottom: 14px;
+}
+
+.apply_code:hover {
+    text-decoration: underline;
+}
+
+#cart_total {
+    font: normal 300 18px/18px GT Walsheim Pro, serif;
+    color: var(--blue);
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 32px;
+    border-collapse: collapse;
+}
+
+#cart_total td:last-child {
+    text-align: right;
+}
+
+#cart_total tr:not(:last-child) {
+    border-bottom: 8px solid transparent;
+}
+
+#cart_total tr:last-child {
+    font-weight: normal;
+}
+
+#proceed_to_checkout_btn {
+    display: inline-block;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    background-color: var(--blue);
+    text-transform: uppercase;
+    font: normal normal 24px/24px Gopher, serif;
+    color: var(--white);
+    margin-bottom: 80px;
+}
+
+/* js related class */
+.show_cart_container {
     display: block;
 }
+
+/* */
 
 /******************** HEADER END ********************/
 
@@ -419,7 +524,7 @@ img {
     position: relative;
 }
 
-.add_to_cart {
+.add_to_cart_btn {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -432,15 +537,9 @@ img {
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
-.bouquet_image:hover .add_to_cart {
+.bouquet_image:hover .add_to_cart_btn {
     visibility: visible;
     opacity: 1;
 }
@@ -582,20 +681,20 @@ img {
     color: var(--white);
 }
 
-.blue_btn:active {
-    outline: 1px dashed var(--blue);
-    outline-offset: 2px;
-}
+/*.blue_btn:active, #proceed_to_checkout_btn:active {*/
+/*    outline: 1px dashed var(--blue);*/
+/*    outline-offset: 2px;*/
+/*}*/
 
-.white_btn:active {
-    outline: 1px dashed var(--white);
-    outline-offset: 2px;
-}
+/*.white_btn:active {*/
+/*    outline: 1px dashed var(--white);*/
+/*    outline-offset: 2px;*/
+/*}*/
 
-.pink_btn:active {
-    outline: 1px dashed var(--brightPink);
-    outline-offset: 2px;
-}
+/*.pink_btn:active {*/
+/*    outline: 1px dashed var(--brightPink);*/
+/*    outline-offset: 2px;*/
+/*}*/
 
 .subtitle_with_button {
     display: flex;
@@ -774,7 +873,6 @@ input:focus {
 #subscription_form input {
     border-radius: 0;
     width: 360px;
-    height: 40px;
     background: var(--white);
     border: 1px solid var(--blue);
     font: normal 300 20px/20px GT Walsheim Pro, serif;
@@ -913,7 +1011,7 @@ hr {
         padding: 27px 0;
     }
 
-    .counter img {
+    #cart_area img {
         width: 18px;
         height: 18px;
     }
@@ -1006,12 +1104,12 @@ hr {
         height: 20px;
     }
 
-    .add_to_cart img {
+    .add_to_cart_btn img {
         width: 16px;
         height: 16px;
     }
 
-    .add_to_cart {
+    .add_to_cart_btn {
         padding: 6px 0;
     }
 

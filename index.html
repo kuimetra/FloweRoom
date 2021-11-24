@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <title>FloweRoom</title>
 </head>
 <body>
-<script src="js/app.js"></script>
 <main>
     <header id="header">
         <div class="wrapper">
@@ -22,39 +22,78 @@
                 <li><a class="links" href="#footer">Contact</a></li>
                 <li>
                     <div class="cart">
-                        <div class="counter">
+                        <button id="cart_area">
                             <img src="img/shopping_cart_icon.svg" alt="Shopping cart" height="20" width="20">
-                            <div class="counter_area">
-                                <div id="amount">0</div>
+                            <span class="counter_area">
+                                <span id="amount">0</span>
+                            </span>
+                        </button>
+                        <div class="cart_container">
+                            <div id="cart_header">
+                                <h1 id="cart_title">Cart</h1>
+                                <button type="button" id="cart_close_btn">
+                                    <img src="img/close_icon.svg" alt="Close" width="24" height="24">
+                                </button>
+                            </div>
+                            <div id="cart_main">
+                                <div class="cart_list">
+                                    <!--                                    <div class="cart_item">-->
+                                    <!--                                        <img src="img/the_buttercream_bouquet.png" alt="Bouquet image">-->
+                                    <!--                                        <div class="cart_item_info">-->
+                                    <!--                                            <h3 class="cart_item_name">The Buttercream</h3>-->
+                                    <!--                                            <div class="cart_item_amount">-->
+                                    <!--                                                <div class="increment_decrement_counter">-->
+                                    <!--                                                    <button class="reduce_amount"></button>-->
+                                    <!--                                                    <input class="product_quantity" type="text" value="1"-->
+                                    <!--                                                           readonly="readonly">-->
+                                    <!--                                                    <button class="expand_amount"></button>-->
+                                    <!--                                                </div>-->
+                                    <!--                                                <button class="cart_item_del_btn"></button>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            <span class="cart_item_price">$83</span>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                </div>
+                                <form action="#" method="get" id="promo_code_form">
+                                    <input type="text" id="promo_code_value" name="promo_code_value"
+                                           placeholder="Promo code">
+                                    <button id="apply_promo_code" class="apply_code" name="promo_code_value">apply code
+                                    </button>
+                                </form>
+                                <form action="#" method="get" id="zip_code_form">
+                                    <input type="text"
+                                           oninvalid="this.setCustomValidity('Please enter a valid zip code!:)')"
+                                           pattern="[0-9]{5}" placeholder="Zip code" id="zip_code_value"
+                                           name="zip_code_value" required>
+                                    <button id="apply_zip_code" class="apply_code" name="zip_code_value">calculate
+                                        shipping charges
+                                    </button>
+                                </form>
+
+                                <table id="cart_total">
+                                    <tr>
+                                        <td id="subtotal_label">Subtotal</td>
+                                        <td><span id="subtotal_price">-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="discount_label">Discount</td>
+                                        <td><span id="discount_price">-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="shipping_label">Shipping</td>
+                                        <td><span id="shipping_price">-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="order_total_label">Order Total</td>
+                                        <td><span id="order_total_price">-</span></td>
+                                    </tr>
+                                </table>
+
+                                <button id="proceed_to_checkout_btn" type="submit" value="Proceed To Checkout">Proceed
+                                    To Checkout
+                                </button>
                             </div>
                         </div>
-                        <!--                        <div class="cart-container">-->
-                        <!--                            <h1 id="cart_title">Cart</h1>-->
-                        <!--                            <div class="cart-list">-->
-                        <!--                                <div class="cart-item">-->
-                        <!--                                    <img src="img/the_optimist_bouquet.png" alt="product image">-->
-                        <!--                                    <div class="cart-item-info">-->
-                        <!--                                        <h3 class="cart-item-name">The Optimist</h3>-->
-                        <!--                                        <span class="cart-item-price">$80</span>-->
-                        <!--                                    </div>-->
-                        <!--                                    &lt;!&ndash;                                    <button type="button" class="cart-item-del-btn">&ndash;&gt;-->
-                        <!--                                    &lt;!&ndash;                                        <img src="img/trash_icon.svg" alt="Remove">&ndash;&gt;-->
-                        <!--                                    &lt;!&ndash;                                    </button>&ndash;&gt;-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="cart-total">-->
-                        <!--                                <div class="total_label">-->
-                        <!--                                    <h4>Delivery</h4>-->
-                        <!--                                    <h4>Subtotal</h4>-->
-                        <!--                                    <h4>Order Total</h4>-->
-                        <!--                                </div>-->
-                        <!--                                <div class="total_price">-->
-                        <!--                                    <span id="cart_delivery">$14</span>-->
-                        <!--                                    <span id="cart_subtotal">$158</span>-->
-                        <!--                                    <span id="cart_order_total">$172</span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
                     </div>
                 </li>
             </ul>
@@ -103,201 +142,201 @@
     <section id="shop">
         <div class="wrapper">
             <div class="shop_grid">
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet"
-                             width="261" height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Optimist</p>
-                        <div class="bouquet_price">
-                            <p class="price">$80</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Verona</p>
-                        <div class="bouquet_price">
-                            <p class="price">$72</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Warm Up</p>
-                        <div class="bouquet_price">
-                            <p class="price">$88</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Tangelo</p>
-                        <div class="bouquet_price">
-                            <p class="price">$70</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Royal</p>
-                        <div class="bouquet_price">
-                            <p class="price">$120</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Peony</p>
-                        <div class="bouquet_price">
-                            <p class="price">$75</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet"
-                             width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Firecracker</p>
-                        <div class="bouquet_price">
-                            <p class="price">$62</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Regatta</p>
-                        <div class="bouquet_price">
-                            <p class="price">$105</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet"
-                             width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Champagne</p>
-                        <div class="bouquet_price">
-                            <p class="price">$96</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Malora</p>
-                        <div class="bouquet_price">
-                            <p class="price">$104</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet"
-                             width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Buttercream</p>
-                        <div class="bouquet_price">
-                            <p class="price">$83</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop_grid_item">
-                    <div class="bouquet_image">
-                        <img class="bouquet_img" src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261"
-                             height="327">
-                        <div class="add_to_cart" onclick="incrementCartAmount()">
-                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                            <p class="add_to_cart_text">Add to cart</p>
-                        </div>
-                    </div>
-                    <div class="bouquet_info">
-                        <p class="bouquet_name">The Juneau</p>
-                        <div class="bouquet_price">
-                            <p class="price">$135</p>
-                        </div>
-                    </div>
-                </div>
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet"-->
+                <!--                             width="261" height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Optimist</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$80</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_verona_bouquet.png" alt="The Verona Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Verona</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$72</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_warm_up_bouquet.png" alt="The Warm Up Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Warm Up</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$88</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_tangelo_bouquet.png" alt="The Tangelo Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Tangelo</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$70</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_royal_bouquet.png" alt="The Royal Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Royal</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$120</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_peony_bouquet.png" alt="The Peony Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Peony</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$75</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_firecracker_bouquet.png" alt="The Firecracker Bouquet"-->
+                <!--                             width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Firecracker</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$62</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_regatta_bouquet.png" alt="The Regatta Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Regatta</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$105</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_champagne_bouquet.png" alt="The Champagne Bouquet"-->
+                <!--                             width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Champagne</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$96</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_malora_bouquet.png" alt="The Malora Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Malora</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$104</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_buttercream_bouquet.png" alt="The Buttercream Bouquet"-->
+                <!--                             width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Buttercream</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$83</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="shop_grid_item">-->
+                <!--                    <div class="bouquet_image">-->
+                <!--                        <img class="bouquet_img" src="img/the_juneau_bouquet.png" alt="The Juneau Bouquet" width="261"-->
+                <!--                             height="327">-->
+                <!--                        <button class="add_to_cart_btn" onclick="incrementCartAmount()">-->
+                <!--                            <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">-->
+                <!--                            <span class="add_to_cart_text">Add to cart</span>-->
+                <!--                        </button>-->
+                <!--                    </div>-->
+                <!--                    <div class="bouquet_info">-->
+                <!--                        <p class="bouquet_name">The Juneau</p>-->
+                <!--                        <div class="bouquet_price">-->
+                <!--                            <p class="price">$135</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </div>
     </section>
@@ -423,9 +462,9 @@
                 subscriber-only discounts!</h2>
             <div class="input_row">
                 <form action="#" method="get" id="subscription_form">
-                    <input type="email" id="subscription_email" name="subscription_email"
-                           placeholder="name@address.com" required
-                           oninvalid="this.setCustomValidity('Please enter a valid email address!:)')">
+                    <input type="email" oninvalid="this.setCustomValidity('Please enter a valid email address!:)')"
+                           id="subscription_email" name="subscription_email"
+                           placeholder="name@address.com" required>
                 </form>
                 <button class="blue_btn" type="submit" form="subscription_form" value="Sign Me Up">Sign Me Up</button>
             </div>
@@ -485,5 +524,6 @@
         </div>
     </footer>
 </main>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -164,6 +164,8 @@ img {
     color: var(--brightPink);
 }
 
+/******************** CART CONTAINER START ********************/
+
 .cart_container {
     position: absolute;
     background: var(--white);
@@ -174,6 +176,10 @@ img {
     box-shadow: -8px 8px 16px rgba(37, 64, 93, 0.2);
     padding: 0 25px;
     display: none;
+}
+
+.show_cart_container {
+    display: block;
 }
 
 #cart_header {
@@ -205,16 +211,8 @@ img {
 
 #cart_main::-webkit-scrollbar {
     width: 0;
+    background: transparent;
 }
-
-/*#cart_main::-webkit-scrollbar-thumb {*/
-/*    background: rgba(0, 0, 0, 0.1);*/
-/*    border-radius: 15px;*/
-/*    -webkit-border-radius: 15px;*/
-/*    -moz-border-radius: 15px;*/
-/*    -ms-border-radius: 15px;*/
-/*    -o-border-radius: 15px;*/
-/*}*/
 
 .cart_item {
     width: 100%;
@@ -351,12 +349,7 @@ img {
     margin-bottom: 80px;
 }
 
-/* js related class */
-.show_cart_container {
-    display: block;
-}
-
-/* */
+/******************** CART CONTAINER END ********************/
 
 /******************** HEADER END ********************/
 
@@ -452,16 +445,6 @@ img {
     background-color: var(--pink);
     padding: 75px 0;
 }
-
-/*#shop .grid {*/
-/*    grid-template-rows: repeat(3, 1fr);*/
-/*    row-gap: 40px;*/
-/*}*/
-
-/*.shop_item {*/
-/*    grid-column: span 4;*/
-/*    grid-row: span 1;*/
-/*}*/
 
 .shop_grid {
     display: flex;
@@ -681,21 +664,6 @@ img {
     color: var(--white);
 }
 
-/*.blue_btn:active, #proceed_to_checkout_btn:active {*/
-/*    outline: 1px dashed var(--blue);*/
-/*    outline-offset: 2px;*/
-/*}*/
-
-/*.white_btn:active {*/
-/*    outline: 1px dashed var(--white);*/
-/*    outline-offset: 2px;*/
-/*}*/
-
-/*.pink_btn:active {*/
-/*    outline: 1px dashed var(--brightPink);*/
-/*    outline-offset: 2px;*/
-/*}*/
-
 .subtitle_with_button {
     display: flex;
     align-items: center;
@@ -746,16 +714,6 @@ img {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
 }
-
-/*.instagram_grid {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    flex-direction: row;*/
-/*    column-gap: 30px;*/
-/*    row-gap: 30px;*/
-/*    align-content: space-between;*/
-/*    justify-content: center;*/
-/*}*/
 
 .instagram_pic img {
     max-width: 100%;
@@ -982,15 +940,6 @@ hr {
 }
 
 /******************** FOOTER END ********************/
-
-/*@media (max-width: 576px) {*/
-/*}*/
-
-/*@media (max-width: 768px) {*/
-/*}*/
-
-/*@media (max-width: 992px) {*/
-/*}*/
 
 @media screen and (max-width: 1260px) {
     .wrapper {
@@ -1285,58 +1234,3 @@ hr {
         padding: 25px 0;
     }
 }
-
-/*@media screen and (max-width: 1020px) {*/
-/*    .wrapper {*/
-/*        max-width: 720px;*/
-/*    }*/
-
-/*    #logo {*/
-/*        width: 185px;*/
-/*        height: 24px;*/
-/*    }*/
-
-/*    .links {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*    }*/
-
-/*    .nav li {*/
-/*        padding: 23px 0;*/
-/*    }*/
-
-/*    .counter img {*/
-/*        width: 16px;*/
-/*        height: 16px;*/
-/*    }*/
-
-/*    #amount {*/
-/*        font-size: 16px;*/
-/*        line-height: 16px;*/
-/*        width: 41px;*/
-/*        height: 16px;*/
-/*    }*/
-
-/*    .links {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*    }*/
-
-/*    .hero_title {*/
-/*        max-width: 546px;*/
-/*        font-size: 56px;*/
-/*        line-height: 59px;*/
-/*    }*/
-
-/*    .hero_text {*/
-/*        max-width: 475px;*/
-/*        margin-bottom: 10px;*/
-/*        font-size: 18px;*/
-/*        line-height: 23px;*/
-/*    }*/
-
-/*    .white_btn, .blue_btn, .pink_btn {*/
-/*        font-size: 20px;*/
-/*        line-height: 20px;*/
-/*    }*/
-/*}*/

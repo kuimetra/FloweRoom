@@ -25,7 +25,7 @@ function eventListeners() {
     //         cartContainer.classList.toggle('show_cart_container');
     //     });
     // });
-    
+
     // hide cart container
     document.getElementById('cart_close_btn').addEventListener('click', () => {
         cartContainer.classList.toggle('show_cart_container');

@@ -1,42 +1,6 @@
-// $(function () {
-//     $('.reduce_amount').click(decrease);
-//     $('.product_quantity').change(valueChange);
-//     $('.expand_amount').click(increase);
-// });
-//
-// function decrease() {
-//     let value = $(this).parent().find('.product_quantity').val();
-//     if (value > 1) {
-//         value--;
-//         $(this).parent().find('.product_quantity').val(value);
-//     }
-// }
-//
-// function valueChange() {
-//     let value = $(this).val();
-//     if (value === undefined || isNaN(value) === true || value <= 0) {
-//         $(this).val(1);
-//     } else if (value >= 101) {
-//         $(this).val(100);
-//     }
-// }
-//
-// function increase() {
-//     let value = $(this).parent().find('.product_quantity').val();
-//     if (value < 100) {
-//         value++;
-//         $(this).parent().find('.product_quantity').val(value);
-//     }
-// }
-
 const cartContainer = document.querySelector('.cart_container');
 const shopAllList = document.querySelector('.shop_grid');
 const cartList = document.querySelector('.cart_list');
-
-// const cartContainer = document.querySelector('.reduce_amount');
-// const shopAllList = document.querySelector('.product_quantity');
-// const cartList = document.querySelector('.expand_amount');
-
 const subtotalPrice = document.getElementById('subtotal_price');
 const numberOfItemsInCart = document.getElementById('amount');
 let cartItemID = 1;
@@ -55,6 +19,13 @@ function eventListeners() {
         cartContainer.classList.toggle('show_cart_container');
     });
 
+    // let addToCartButtons = document.getElementsByClassName('.add_to_cart_btn');
+    // Array.from(addToCartButtons).forEach(function (element) {
+    //     element.addEventListener('click', event => {
+    //         cartContainer.classList.toggle('show_cart_container');
+    //     });
+    // });
+    
     // hide cart container
     document.getElementById('cart_close_btn').addEventListener('click', () => {
         cartContainer.classList.toggle('show_cart_container');
@@ -63,30 +34,15 @@ function eventListeners() {
     // add to cart
     shopAllList.addEventListener('click', purchaseBouquet);
 
-    // delete from cart
+    // delete/decrement/increment item
     cartList.addEventListener('click', deleteBouquet);
-
-    // delete from cart
-    // cartList.addEventListener('click', decrease);
+    cartList.addEventListener('click', decrementBouquet);
+    cartList.addEventListener('click', incrementBouquet);
 }
 
-// function decrease(e) {
-//     let cartItem;
-//     if (e.target.className === "reduce_amount") {
-//         console.log(e);
-//     }
-//
-//     // let value = $(this).parent().find('.product_quantity').val();
-//     // if (value > 1) {
-//     //     value--;
-//     //     $(this).parent().find('.product_quantity').val(value);
-//     // }
-// }
-
-// update cart info
 function updateCartInfo() {
-    let cartInfo = findCartInfo();
-    numberOfItemsInCart.textContent = cartInfo.bouquetsCount;
+    let cartInfo = calculateAmountAndPrice();
+    numberOfItemsInCart.textContent = cartInfo.bouquetsCount.toString();
     subtotalPrice.textContent = "$" + cartInfo.total;
 }
 
@@ -97,7 +53,7 @@ function loadJSON() {
             let html = '';
             data.forEach(bouquet => {
                 html += `
-            <div class="shop_grid_item" data-id="${cartItemID}">
+            <div class="shop_item" data-id="${cartItemID}">
                 <div class="bouquet_image">
                     <img class="bouquet_img" src="${bouquet.imgSrc}" alt="${bouquet.imgAlt}"
                          width="261" height="327">
@@ -123,6 +79,25 @@ function loadJSON() {
         })
 }
 
+function loadCart() {
+    let bouquets = getBouquetFromStorage();
+    bouquets.forEach(bouquets => addToCartList(bouquets));
+    updateCartInfo();
+}
+
+function calculateAmountAndPrice() {
+    let bouquets = getBouquetFromStorage();
+    let total = bouquets.reduce((acc, bouquet) => {
+        let price = parseFloat(bouquet.price.substr(1)) * bouquet.amount;
+        return acc += price;
+    }, 0);
+
+    return {
+        total: total.toFixed(2),
+        bouquetsCount: bouquets.length
+    }
+}
+
 function purchaseBouquet(e) {
     if (e.target.classList.contains('add_to_cart_btn')) {
         let bouquet = e.target.parentElement.parentElement;
@@ -130,7 +105,6 @@ function purchaseBouquet(e) {
     }
 }
 
-// get product info after add to cart button click
 function getBouquetInfo(bouquet) {
     let bouquets = getBouquetFromStorage();
     let bouquetAlreadyExists = bouquets.some(e => e.id === bouquet.getAttribute("data-id"));
@@ -152,7 +126,6 @@ function getBouquetInfo(bouquet) {
     }
 }
 
-// add the selected product to the cart list
 function addToCartList(bouquet) {
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart_item');
@@ -176,7 +149,6 @@ function addToCartList(bouquet) {
     cartList.appendChild(cartItem);
 }
 
-// save the product in the local storage
 function saveBouquetInStorage(item) {
     let bouquets = getBouquetFromStorage();
     bouquets.push(item);
@@ -189,30 +161,8 @@ function updateBouquetInStorage(items) {
     updateCartInfo();
 }
 
-// get all the products info if there is any in the local storage
 function getBouquetFromStorage() {
     return localStorage.getItem('bouquets') ? JSON.parse(localStorage.getItem('bouquets')) : [];
-    // returns empty array if there isn't any product info
-}
-
-function loadCart() {
-    let bouquets = getBouquetFromStorage();
-    bouquets.forEach(bouquets => addToCartList(bouquets));
-    updateCartInfo();
-}
-
-// calculate total price of the cart and other info
-function findCartInfo() {
-    let bouquets = getBouquetFromStorage();
-    let total = bouquets.reduce((acc, bouquet) => {
-        let price = parseFloat(bouquet.price.substr(1)) * bouquet.amount;
-        return acc += price;
-    }, 0);
-
-    return {
-        total: total.toFixed(2),
-        bouquetsCount: bouquets.length
-    }
 }
 
 function deleteBouquet(e) {
@@ -226,17 +176,37 @@ function deleteBouquet(e) {
         });
         localStorage.setItem('bouquets', JSON.stringify(updatedBouquets));
     }
+    updateCartInfo();
+}
+
+function decrementBouquet(e) {
+    let cartItem = e.target.parentElement.parentElement.parentElement;
     if (e.target.className === "reduce_amount") {
-        e.target.parentElement.querySelector(`input.product_quantity`).value--;
-        let bouquets = getBouquetFromStorage();
-        bouquets.forEach(bouquet => {
-            if (bouquet.id === cartItem.parentElement.getAttribute("data-id")) {
-                bouquet.amount--;
-            }
-        });
-        console.log(bouquets);
-        localStorage.setItem('bouquets', JSON.stringify(bouquets));
+        let productQuantity = e.target.parentElement.querySelector(`input.product_quantity`).value;
+        if (parseInt(productQuantity) <= 1) {
+            cartItem.parentElement.remove();
+            cartItem.parentElement.amount = 0;
+            let bouquets = getBouquetFromStorage();
+            let updatedBouquets = bouquets.filter(bouquet => {
+                return bouquet.id !== cartItem.parentElement.getAttribute("data-id");
+            });
+            localStorage.setItem('bouquets', JSON.stringify(updatedBouquets));
+        } else {
+            e.target.parentElement.querySelector(`input.product_quantity`).value--;
+            let bouquets = getBouquetFromStorage();
+            bouquets.forEach(bouquet => {
+                if (bouquet.id === cartItem.parentElement.getAttribute("data-id")) {
+                    bouquet.amount--;
+                }
+            });
+            localStorage.setItem('bouquets', JSON.stringify(bouquets));
+        }
+        updateCartInfo();
     }
+}
+
+function incrementBouquet(e) {
+    let cartItem = e.target.parentElement.parentElement.parentElement;
     if (e.target.className === "expand_amount") {
         e.target.parentElement.querySelector(`input.product_quantity`).value++;
         let bouquets = getBouquetFromStorage();
@@ -247,6 +217,6 @@ function deleteBouquet(e) {
         });
         console.log(bouquets);
         localStorage.setItem('bouquets', JSON.stringify(bouquets));
+        updateCartInfo();
     }
-    updateCartInfo();
 }

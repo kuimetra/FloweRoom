@@ -395,14 +395,14 @@ img {
 
 /******************** HERO END ********************/
 
-/******************** FEATURES START ********************/
+/******************** ABOUT START ********************/
 
-#features {
+#about {
     background-color: var(--lightPink);
     padding: 70px 0;
 }
 
-#features .grid {
+#about .grid {
     display: flex;
     flex-wrap: wrap;
     row-gap: 40px;
@@ -444,7 +444,7 @@ img {
     max-width: 261px;
 }
 
-/******************** FEATURES END ********************/
+/******************** ABOUT END ********************/
 
 /******************** SHOP START ********************/
 
@@ -458,7 +458,7 @@ img {
 /*    row-gap: 40px;*/
 /*}*/
 
-/*.shop_grid_item {*/
+/*.shop_item {*/
 /*    grid-column: span 4;*/
 /*    grid-row: span 1;*/
 /*}*/

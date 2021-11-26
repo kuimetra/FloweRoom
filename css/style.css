@@ -147,8 +147,8 @@ img {
 }
 
 .counter_area {
-    margin-left: 8px;
-    padding: 3px;
+    margin-left: 6px;
+    padding: 2px;
     background: var(--white);
     border: 1px solid var(--blue);
     display: flex;
@@ -169,14 +169,10 @@ img {
 .cart_container {
     position: relative;
     background: var(--white);
-    width: 431px;
     height: 100vh;
-    top: 0;
     float: right;
-    /*right: 0;*/
-    /*box-shadow: -8px 8px 16px rgba(37, 64, 93, 0.2);*/
     padding: 0 25px;
-    /*cursor: auto;*/
+    cursor: auto;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in;
@@ -193,7 +189,7 @@ img {
     cursor: pointer;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.3s ease-in;
+    transition: visibility 2s, opacity 0.5s ease-in;
 }
 
 .show_container {
@@ -261,7 +257,6 @@ img {
     border: 1px solid var(--blue);
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
     padding: 3px 4px;
 }
 
@@ -358,7 +353,7 @@ img {
     text-transform: uppercase;
     font: normal normal 24px/24px Gopher, serif;
     color: var(--white);
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 /******************** CART CONTAINER END ********************/
@@ -419,11 +414,10 @@ img {
 
 .frame {
     position: relative;
-    background-image: url("../img/frame.svg");
-    background-size: 261px;
     width: 261px;
     height: 186px;
-    background-repeat: no-repeat;
+    background: url("../img/frame.svg") no-repeat;
+    background-size: 261px;
 }
 
 .feature_title {
@@ -974,8 +968,8 @@ hr {
     }
 
     #cart_area img {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
     }
 
     #amount {

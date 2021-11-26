@@ -6,7 +6,6 @@ const subtotalPrice = document.getElementById('subtotal_price');
 const numberOfItemsInCart = document.getElementById('amount');
 let cartItemID = 1;
 let itemAmount = 1;
-let j = 0;
 
 eventListeners();
 
@@ -23,13 +22,14 @@ function eventListeners() {
         $("body").addClass("prevent_scrolling");
     });
 
-    // hide cart container
+    // hide cart container by clicking the close button
     document.getElementById('cart_close_btn').addEventListener('click', () => {
         $(cartContainer).removeClass('show_container');
         $(cartBackground).removeClass('show_container');
         $("body").removeClass("prevent_scrolling");
     });
 
+    // hide cart container by clicking outside the div, on the backdrop
     document.querySelector('.background_fade').addEventListener('click', function (e) {
         if (e.target === e.currentTarget) {
             document.getElementById('cart_close_btn').click();

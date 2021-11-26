@@ -22,8 +22,15 @@ function eventListeners() {
         $("body").addClass("prevent_scrolling");
     });
 
-    // hide cart container by clicking the close button
+    // hide cart container by clicking close button
     document.getElementById('cart_close_btn').addEventListener('click', () => {
+        $(cartContainer).removeClass('show_container');
+        $(cartBackground).removeClass('show_container');
+        $("body").removeClass("prevent_scrolling");
+    });
+
+    // hide cart container by clicking continue button
+    document.getElementById('continue_btn').addEventListener('click', () => {
         $(cartContainer).removeClass('show_container');
         $(cartBackground).removeClass('show_container');
         $("body").removeClass("prevent_scrolling");

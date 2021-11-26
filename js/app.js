@@ -288,6 +288,10 @@ function saveOrderInStorage() {
         document.getElementById('zip_code_form').reset();
         zipCodeFormInput.style.borderColor = "var(--blue)";
         orderZip = undefined;
+        bouquetDiscount = undefined;
+        shippingDiscount = undefined;
+        deliveryPrice = undefined;
+        updateCartInfo();
     }
 }
 

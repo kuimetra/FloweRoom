@@ -1,8 +1,8 @@
 [
   {
-    "promo_code": "FALL15",
+    "promo_code": "WINTER15",
     "bouquets_discount": 15,
-    "shipping_discount": 50
+    "shipping_discount": 15
   },
   {
     "promo_code": "FREEXSHIP",
@@ -25,7 +25,7 @@
     "shipping_discount": 0
   },
   {
-    "promo_code": "HOLIDAYS2021",
+    "promo_code": "HOLIDAYS2022",
     "bouquets_discount": 5,
     "shipping_discount": 100
   },

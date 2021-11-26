@@ -38,23 +38,6 @@
                                 <div id="cart_main">
                                     <div class="cart_list">
                                         <!-- cart items -->
-                                        <!--  <div class="cart_item">  -->
-                                        <!--  <img src="img/the_buttercream_bouquet.png" alt="Bouquet image">  -->
-                                        <!--  <div class="cart_item_info">  -->
-                                        <!--    <h3 class="cart_item_name">The Buttercream</h3>  -->
-                                        <!--        <div class="cart_item_amount">  -->
-                                        <!--            <div class="increment_decrement_counter">  -->
-                                        <!--                <button class="reduce_amount"></button>  -->
-                                        <!--                <input class="product_quantity" type="text" value="1"  -->
-                                        <!--                    readonly="readonly">  -->
-                                        <!--                <button class="expand_amount"></button>  -->
-                                        <!--            </div>  -->
-                                        <!--        <button class="cart_item_del_btn"></button>  -->
-                                        <!--        </div>  -->
-                                        <!--        <span class="cart_item_price">$83</span>  -->
-                                        <!--  </div>  -->
-                                        <!--  </div>  -->
-                                        <!-- cart items -->
                                     </div>
                                     <form method="get" id="promo_code_form" onsubmit="validatePromo(); return false;">
                                         <input type="text" id="promo_code_value" name="promo_code_value"
@@ -63,10 +46,9 @@
                                             code
                                         </button>
                                     </form>
-                                    <form action="#" method="get" id="zip_code_form" onsubmit="validateZip(); return false;">
-                                        <input type="text"
-                                               oninvalid="this.setCustomValidity('Please enter a valid zip code!:)')"
-                                               pattern="[0-9]{5}" placeholder="Zip code" id="zip_code_value"
+                                    <form action="#" method="get" id="zip_code_form"
+                                          onsubmit="validateZip(); return false;">
+                                        <input type="text" placeholder="Zip code" id="zip_code_value"
                                                name="zip_code_value" required>
                                         <button id="apply_zip_code" class="apply_code" name="zip_code_value">calculate
                                             shipping charges
@@ -151,23 +133,6 @@
     <section id="shop">
         <div class="wrapper">
             <div class="shop_grid">
-                <!-- shop items -->
-                <!-- <div class="shop_item">  -->
-                <!--    <div class="bouquet_image">  -->
-                <!--        <img class="bouquet_img" src="img/the_optimist_bouquet.png" alt="The Optimist Bouquet"  -->
-                <!--             width="261" height="327">  -->
-                <!--        <button class="add_to_cart_btn">  -->
-                <!--           <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">  -->
-                <!--           <span class="add_to_cart_text">Add to cart</span>  -->
-                <!--        </button>  -->
-                <!--    </div>  -->
-                <!--    <div class="bouquet_info">  -->
-                <!--         <p class="bouquet_name">The Optimist</p>  -->
-                <!--        <div class="bouquet_price">  -->
-                <!--            <p class="price">$80</p>  -->
-                <!--        </div>  -->
-                <!--     </div>  -->
-                <!--  </div>  -->
                 <!-- shop items -->
             </div>
         </div>

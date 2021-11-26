@@ -1,0 +1,30 @@
+[
+  {
+    "zip_code": "10001",
+    "delivery_price": 14.6
+  },
+  {
+    "zip_code": "90074",
+    "delivery_price": 18.2
+  },
+  {
+    "zip_code": "91209",
+    "delivery_price": 21.0
+  },
+  {
+    "zip_code": "45011",
+    "delivery_price": 13.8
+  },
+  {
+    "zip_code": "02101",
+    "delivery_price": 15.7
+  },
+  {
+    "zip_code": "98101",
+    "delivery_price": 14.1
+  },
+  {
+    "zip_code": "10099",
+    "delivery_price": 17.0
+  }
+]

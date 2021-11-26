@@ -1,27 +1,52 @@
-const cartContainer = document.querySelector('.cart_container');
 const cartBackground = document.querySelector('.cart_background_fade');
-const shopAllList = document.querySelector('.shop_grid');
+const cartContainer = document.querySelector('.cart_container');
 const cartList = document.querySelector('.cart_list');
+const shopAllList = document.querySelector('.shop_grid');
+const numberOfItemsInCart = document.getElementById('amount');
 const subtotalPrice = document.getElementById('subtotal_price');
 const discountAmount = document.getElementById('discount_price');
 const shippingPrice = document.getElementById('shipping_price');
 const orderTotalPrice = document.getElementById('order_total_price');
-const numberOfItemsInCart = document.getElementById('amount');
+const promoCodeFormInput = document.getElementById('promo_code_value');
+const zipCodeFormInput = document.getElementById('zip_code_value');
+
 let cartItemID = 1;
 let itemAmount = 1;
+let orderId = 1;
 let promoCodes, zipCodes;
-let bouquetDiscount, shippingDiscount, deliveryPrice;
+let orderZip, orderPromo, bouquetDiscount, shippingDiscount, deliveryPrice;
 
 function validatePromo() {
-    let promoCodeInput = document.getElementById('promo_code_value').value;
-    bouquetDiscount = promoCodes.filter(item => item.promo_code === promoCodeInput).map(item => item.bouquets_discount)[0];
-    shippingDiscount = promoCodes.filter(item => item.promo_code === promoCodeInput).map(item => item.shipping_discount)[0];
+    promoCodeFormInput.style.borderColor = "var(--blue)";
+    let promoCodeInput = document.getElementById('promo_code_value').value.trim().toLowerCase();
+    bouquetDiscount = promoCodes.filter(item => item.promo_code.toLowerCase() === promoCodeInput).map(item => item.bouquets_discount)[0];
+    shippingDiscount = promoCodes.filter(item => item.promo_code.toLowerCase() === promoCodeInput).map(item => item.shipping_discount)[0];
+    if (!Boolean(bouquetDiscount) && !Boolean(shippingDiscount)) {
+        promoCodeFormInput.style.borderColor = "var(--brightPink)";
+        orderPromo = undefined;
+    } else {
+        orderPromo = promoCodeInput;
+    }
     updateCartInfo();
 }
 
+function isNumeric(value) {
+    return /^-?\d+$/.test(value);
+}
+
 function validateZip() {
-    let zipCodeInput = parseInt(document.getElementById('zip_code_value').value);
-    deliveryPrice = zipCodes.filter(item => item.zip_code === zipCodeInput).map(item => item.delivery_price)[0];
+    zipCodeFormInput.style.borderColor = "var(--blue)";
+    let zipCodeInput = document.getElementById('zip_code_value').value.trim();
+    if (isNumeric(zipCodeInput)) {
+        deliveryPrice = zipCodes.filter(item => item.zip_code === zipCodeInput).map(item => item.delivery_price)[0];
+    }
+    if (!Boolean(deliveryPrice) || !isNumeric(zipCodeInput)) {
+        zipCodeFormInput.style.borderColor = "var(--brightPink)";
+        deliveryPrice = undefined;
+        orderZip = undefined;
+    } else {
+        orderZip = zipCodeInput;
+    }
     updateCartInfo();
 }
 
@@ -70,6 +95,9 @@ function eventListeners() {
     cartList.addEventListener('click', deleteBouquet);
     cartList.addEventListener('click', decrementBouquet);
     cartList.addEventListener('click', incrementBouquet);
+
+    // save order info to local storage by clicking proceed to checkout button
+    document.getElementById('proceed_to_checkout_btn').addEventListener('click', saveOrderInStorage);
 }
 
 function updateCartInfo() {
@@ -82,7 +110,7 @@ function updateCartInfo() {
 }
 
 function loadJSON() {
-    fetch('bouquets.json')
+    fetch('data/bouquets.json')
         .then(response => response.json())
         .then(data => {
             let html = '';
@@ -114,13 +142,13 @@ function loadJSON() {
 }
 
 function loadPromoCodes() {
-    $.getJSON('promo_codes.json', function (responseObject) {
+    $.getJSON('data/promo_codes.json', function (responseObject) {
         promoCodes = responseObject;
     })
 }
 
 function loadZipCodes() {
-    $.getJSON('zip_codes.json', function (responseObject) {
+    $.getJSON('data/zip_codes.json', function (responseObject) {
         zipCodes = responseObject;
     })
 }
@@ -231,6 +259,40 @@ function saveBouquetInStorage(bouquet) {
     bouquets.push(bouquet);
     localStorage.setItem('bouquets', JSON.stringify(bouquets));
     updateCartInfo();
+}
+
+function saveOrderInStorage() {
+    let orderInfo = calculateAmountAndPrice();
+    let orders = getOrdersFromStorage();
+    if (orderInfo.bouquetsCount > 0 && Boolean(orderZip)) {
+        console.log(Object.keys(orders).length);
+        if (Object.keys(orders).length > 0) {
+            orderId = orders[orders.length - 1].id;
+            orderId++;
+        }
+        let order = {
+            id: orderId,
+            amount: orderInfo.bouquetsCount,
+            zip: orderZip,
+            promoCode: orderPromo,
+            subtotalPrice: parseFloat(orderInfo.total),
+            discount: parseFloat(orderInfo.discount),
+            shipping: parseFloat(orderInfo.shipping),
+            orderTotalPrice: parseFloat(orderInfo.orderTotal)
+        }
+        orders.push(order);
+        localStorage.setItem('orders', JSON.stringify(orders));
+        document.getElementById('promo_code_form').reset();
+        promoCodeFormInput.style.borderColor = "var(--blue)";
+        orderPromo = undefined;
+        document.getElementById('zip_code_form').reset();
+        zipCodeFormInput.style.borderColor = "var(--blue)";
+        orderZip = undefined;
+    }
+}
+
+function getOrdersFromStorage() {
+    return localStorage.getItem('orders') ? JSON.parse(localStorage.getItem('orders')) : [];
 }
 
 function updateBouquetInStorage(bouquets) {

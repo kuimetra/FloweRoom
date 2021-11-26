@@ -27,72 +27,76 @@
                                 <span id="amount">0</span>
                             </span>
                         </button>
-                        <div class="cart_container">
-                            <div id="cart_header">
-                                <h1 id="cart_title">Cart</h1>
-                                <button type="button" id="cart_close_btn">
-                                    <img src="img/close_icon.svg" alt="Close" width="24" height="24">
-                                </button>
-                            </div>
-                            <div id="cart_main">
-                                <div class="cart_list">
-                                    <!-- cart items -->
-                                    <!--  <div class="cart_item">  -->
-                                    <!--  <img src="img/the_buttercream_bouquet.png" alt="Bouquet image">  -->
-                                    <!--  <div class="cart_item_info">  -->
-                                    <!--    <h3 class="cart_item_name">The Buttercream</h3>  -->
-                                    <!--        <div class="cart_item_amount">  -->
-                                    <!--            <div class="increment_decrement_counter">  -->
-                                    <!--                <button class="reduce_amount"></button>  -->
-                                    <!--                <input class="product_quantity" type="text" value="1"  -->
-                                    <!--                    readonly="readonly">  -->
-                                    <!--                <button class="expand_amount"></button>  -->
-                                    <!--            </div>  -->
-                                    <!--        <button class="cart_item_del_btn"></button>  -->
-                                    <!--        </div>  -->
-                                    <!--        <span class="cart_item_price">$83</span>  -->
-                                    <!--  </div>  -->
-                                    <!--  </div>  -->
-                                    <!-- cart items -->
+                        <div id="fade" class="background_fade">
+                            <div class="cart_container">
+                                <div id="cart_header">
+                                    <h1 id="cart_title">Cart</h1>
+                                    <button type="button" id="cart_close_btn">
+                                        <img src="img/close_icon.svg" alt="Close" width="24" height="24">
+                                    </button>
                                 </div>
-                                <form action="#" method="get" id="promo_code_form">
-                                    <input type="text" id="promo_code_value" name="promo_code_value"
-                                           placeholder="Promo code">
-                                    <button id="apply_promo_code" class="apply_code" name="promo_code_value">apply code
-                                    </button>
-                                </form>
-                                <form action="#" method="get" id="zip_code_form">
-                                    <input type="text"
-                                           oninvalid="this.setCustomValidity('Please enter a valid zip code!:)')"
-                                           pattern="[0-9]{5}" placeholder="Zip code" id="zip_code_value"
-                                           name="zip_code_value" required>
-                                    <button id="apply_zip_code" class="apply_code" name="zip_code_value">calculate
-                                        shipping charges
-                                    </button>
-                                </form>
+                                <div id="cart_main">
+                                    <div class="cart_list">
+                                        <!-- cart items -->
+                                        <!--  <div class="cart_item">  -->
+                                        <!--  <img src="img/the_buttercream_bouquet.png" alt="Bouquet image">  -->
+                                        <!--  <div class="cart_item_info">  -->
+                                        <!--    <h3 class="cart_item_name">The Buttercream</h3>  -->
+                                        <!--        <div class="cart_item_amount">  -->
+                                        <!--            <div class="increment_decrement_counter">  -->
+                                        <!--                <button class="reduce_amount"></button>  -->
+                                        <!--                <input class="product_quantity" type="text" value="1"  -->
+                                        <!--                    readonly="readonly">  -->
+                                        <!--                <button class="expand_amount"></button>  -->
+                                        <!--            </div>  -->
+                                        <!--        <button class="cart_item_del_btn"></button>  -->
+                                        <!--        </div>  -->
+                                        <!--        <span class="cart_item_price">$83</span>  -->
+                                        <!--  </div>  -->
+                                        <!--  </div>  -->
+                                        <!-- cart items -->
+                                    </div>
+                                    <form action="#" method="get" id="promo_code_form">
+                                        <input type="text" id="promo_code_value" name="promo_code_value"
+                                               placeholder="Promo code">
+                                        <button id="apply_promo_code" class="apply_code" name="promo_code_value">apply
+                                            code
+                                        </button>
+                                    </form>
+                                    <form action="#" method="get" id="zip_code_form">
+                                        <input type="text"
+                                               oninvalid="this.setCustomValidity('Please enter a valid zip code!:)')"
+                                               pattern="[0-9]{5}" placeholder="Zip code" id="zip_code_value"
+                                               name="zip_code_value" required>
+                                        <button id="apply_zip_code" class="apply_code" name="zip_code_value">calculate
+                                            shipping charges
+                                        </button>
+                                    </form>
 
-                                <table id="cart_total">
-                                    <tr>
-                                        <td id="subtotal_label">Subtotal</td>
-                                        <td><span id="subtotal_price">-</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="discount_label">Discount</td>
-                                        <td><span id="discount_price">-</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="shipping_label">Shipping</td>
-                                        <td><span id="shipping_price">-</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="order_total_label">Order Total</td>
-                                        <td><span id="order_total_price">-</span></td>
-                                    </tr>
-                                </table>
+                                    <table id="cart_total">
+                                        <tr>
+                                            <td id="subtotal_label">Subtotal</td>
+                                            <td><span id="subtotal_price">-</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="discount_label">Discount</td>
+                                            <td><span id="discount_price">-</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="shipping_label">Shipping</td>
+                                            <td><span id="shipping_price">-</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="order_total_label">Order Total</td>
+                                            <td><span id="order_total_price">-</span></td>
+                                        </tr>
+                                    </table>
 
-                                <button id="proceed_to_checkout_btn" type="submit" value="Proceed To Checkout">Proceed
-                                    To Checkout
-                                </button>
+                                    <button id="proceed_to_checkout_btn" type="submit" value="Proceed To Checkout">
+                                        Proceed
+                                        To Checkout
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -349,5 +353,6 @@
     </footer>
 </main>
 <script src="js/app.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
 </html>

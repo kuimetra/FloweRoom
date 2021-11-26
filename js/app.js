@@ -1,10 +1,12 @@
 const cartContainer = document.querySelector('.cart_container');
+const cartBackground = document.querySelector('.background_fade');
 const shopAllList = document.querySelector('.shop_grid');
 const cartList = document.querySelector('.cart_list');
 const subtotalPrice = document.getElementById('subtotal_price');
 const numberOfItemsInCart = document.getElementById('amount');
 let cartItemID = 1;
 let itemAmount = 1;
+let j = 0;
 
 eventListeners();
 
@@ -16,19 +18,22 @@ function eventListeners() {
 
     // show cart container
     document.getElementById('cart_area').addEventListener('click', () => {
-        cartContainer.classList.toggle('show_cart_container');
+        cartContainer.classList.toggle('show_container');
+        cartBackground.classList.toggle('show_container');
+        $("body").addClass("prevent_scrolling");
     });
-
-    // let addToCartButtons = document.getElementsByClassName('.add_to_cart_btn');
-    // Array.from(addToCartButtons).forEach(function (element) {
-    //     element.addEventListener('click', event => {
-    //         cartContainer.classList.toggle('show_cart_container');
-    //     });
-    // });
 
     // hide cart container
     document.getElementById('cart_close_btn').addEventListener('click', () => {
-        cartContainer.classList.toggle('show_cart_container');
+        $(cartContainer).removeClass('show_container');
+        $(cartBackground).removeClass('show_container');
+        $("body").removeClass("prevent_scrolling");
+    });
+
+    document.querySelector('.background_fade').addEventListener('click', function (e) {
+        if (e.target === e.currentTarget) {
+            document.getElementById('cart_close_btn').click();
+        }
     });
 
     // add to cart
@@ -57,9 +62,8 @@ function loadJSON() {
                 <div class="bouquet_image">
                     <img class="bouquet_img" src="${bouquet.imgSrc}" alt="${bouquet.imgAlt}"
                          width="261" height="327">
-                    <button class="add_to_cart_btn">
-                        <img src="img/cart.svg" alt="Cart Icon" height="18" width="18">
-                        <span class="add_to_cart_text">Add to cart</span>
+                    <button type="button" class="add_to_cart_btn">
+                        <i class="add_to_cart_img"></i>Add to cart
                     </button>
                 </div>
                 <div class="bouquet_info">
@@ -87,14 +91,19 @@ function loadCart() {
 
 function calculateAmountAndPrice() {
     let bouquets = getBouquetFromStorage();
+    let amount = bouquets.length;
+    if (!amount) {
+        if ($('.show_container').is(':visible')) {
+            document.getElementById('cart_close_btn').click();
+        }
+    }
     let total = bouquets.reduce((acc, bouquet) => {
         let price = parseFloat(bouquet.price.substr(1)) * bouquet.amount;
         return acc += price;
     }, 0);
-
     return {
         total: total.toFixed(2),
-        bouquetsCount: bouquets.length
+        bouquetsCount: amount
     }
 }
 
@@ -102,6 +111,9 @@ function purchaseBouquet(e) {
     if (e.target.classList.contains('add_to_cart_btn')) {
         let bouquet = e.target.parentElement.parentElement;
         getBouquetInfo(bouquet);
+        if (!$('.show_container').is(':visible')) {
+            document.getElementById('cart_area').click();
+        }
     }
 }
 
@@ -110,9 +122,11 @@ function getBouquetInfo(bouquet) {
     let bouquetAlreadyExists = bouquets.some(e => e.id === bouquet.getAttribute("data-id"));
     if (bouquetAlreadyExists) {
         let obj = bouquets.find(e => e.id === bouquet.getAttribute("data-id"))
-        obj.amount++;
-        document.querySelector(`[data-id="${obj.id}"] input.product_quantity`).value = obj.amount;
-        updateBouquetInStorage(bouquets);
+        if (obj.amount < 100) {
+            obj.amount++;
+            document.querySelector(`[data-id="${obj.id}"] input.product_quantity`).value = obj.amount;
+            updateBouquetInStorage(bouquets);
+        }
     } else {
         let bouquetInfo = {
             id: bouquet.getAttribute("data-id"),
@@ -149,15 +163,15 @@ function addToCartList(bouquet) {
     cartList.appendChild(cartItem);
 }
 
-function saveBouquetInStorage(item) {
+function saveBouquetInStorage(bouquet) {
     let bouquets = getBouquetFromStorage();
-    bouquets.push(item);
+    bouquets.push(bouquet);
     localStorage.setItem('bouquets', JSON.stringify(bouquets));
     updateCartInfo();
 }
 
-function updateBouquetInStorage(items) {
-    localStorage.setItem('bouquets', JSON.stringify(items));
+function updateBouquetInStorage(bouquets) {
+    localStorage.setItem('bouquets', JSON.stringify(bouquets));
     updateCartInfo();
 }
 
@@ -208,15 +222,16 @@ function decrementBouquet(e) {
 function incrementBouquet(e) {
     let cartItem = e.target.parentElement.parentElement.parentElement;
     if (e.target.className === "expand_amount") {
-        e.target.parentElement.querySelector(`input.product_quantity`).value++;
-        let bouquets = getBouquetFromStorage();
-        bouquets.forEach(bouquet => {
-            if (bouquet.id === cartItem.parentElement.getAttribute("data-id")) {
-                bouquet.amount++;
-            }
-        });
-        console.log(bouquets);
-        localStorage.setItem('bouquets', JSON.stringify(bouquets));
-        updateCartInfo();
+        if (e.target.parentElement.querySelector(`input.product_quantity`).value < 100) {
+            e.target.parentElement.querySelector(`input.product_quantity`).value++;
+            let bouquets = getBouquetFromStorage();
+            bouquets.forEach(bouquet => {
+                if (bouquet.id === cartItem.parentElement.getAttribute("data-id")) {
+                    bouquet.amount++;
+                }
+            });
+            localStorage.setItem('bouquets', JSON.stringify(bouquets));
+            updateCartInfo();
+        }
     }
 }

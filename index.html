@@ -27,7 +27,7 @@
                                 <span id="amount">0</span>
                             </span>
                         </button>
-                        <div class="background_fade">
+                        <div class="cart_background_fade">
                             <div class="cart_container">
                                 <div id="cart_header">
                                     <h1 id="cart_title">Cart</h1>
@@ -56,14 +56,14 @@
                                         <!--  </div>  -->
                                         <!-- cart items -->
                                     </div>
-                                    <form action="#" method="get" id="promo_code_form">
+                                    <form method="get" id="promo_code_form" onsubmit="validatePromo(); return false;">
                                         <input type="text" id="promo_code_value" name="promo_code_value"
                                                placeholder="Promo code">
                                         <button id="apply_promo_code" class="apply_code" name="promo_code_value">apply
                                             code
                                         </button>
                                     </form>
-                                    <form action="#" method="get" id="zip_code_form">
+                                    <form action="#" method="get" id="zip_code_form" onsubmit="validateZip(); return false;">
                                         <input type="text"
                                                oninvalid="this.setCustomValidity('Please enter a valid zip code!:)')"
                                                pattern="[0-9]{5}" placeholder="Zip code" id="zip_code_value"
@@ -293,12 +293,14 @@
             <h2 class="mail_subscription_subtitle">Be the first to know about all our special offers and exclusive
                 subscriber-only discounts!</h2>
             <div class="input_row">
-                <form action="#" method="get" id="subscription_form">
-                    <input type="email" oninvalid="this.setCustomValidity('Please enter a valid email address!:)')"
-                           id="subscription_email" name="subscription_email"
-                           placeholder="name@address.com" required>
+                <form method="get" id="subscription_form">
+                    <input type="email" id="subscription_email" name="subscription_email"
+                           placeholder="name@address.com"
+                           oninvalid="this.setCustomValidity('Please enter a valid email address!:)')" required>
                 </form>
-                <button class="blue_btn" type="submit" form="subscription_form" value="Sign Me Up">Sign Me Up</button>
+                <button id="mail_subscription_btn" class="blue_btn" type="submit"
+                        form="subscription_form" value="Sign Me Up">Sign Me Up
+                </button>
             </div>
             <p class="mail_subscription_text">We will occasionally send you exclusive offers, updates and news by
                 email. You can unsubscribe at any time.</p>

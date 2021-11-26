@@ -1,11 +1,29 @@
 const cartContainer = document.querySelector('.cart_container');
-const cartBackground = document.querySelector('.background_fade');
+const cartBackground = document.querySelector('.cart_background_fade');
 const shopAllList = document.querySelector('.shop_grid');
 const cartList = document.querySelector('.cart_list');
 const subtotalPrice = document.getElementById('subtotal_price');
+const discountAmount = document.getElementById('discount_price');
+const shippingPrice = document.getElementById('shipping_price');
+const orderTotalPrice = document.getElementById('order_total_price');
 const numberOfItemsInCart = document.getElementById('amount');
 let cartItemID = 1;
 let itemAmount = 1;
+let promoCodes, zipCodes;
+let bouquetDiscount, shippingDiscount, deliveryPrice;
+
+function validatePromo() {
+    let promoCodeInput = document.getElementById('promo_code_value').value;
+    bouquetDiscount = promoCodes.filter(item => item.promo_code === promoCodeInput).map(item => item.bouquets_discount)[0];
+    shippingDiscount = promoCodes.filter(item => item.promo_code === promoCodeInput).map(item => item.shipping_discount)[0];
+    updateCartInfo();
+}
+
+function validateZip() {
+    let zipCodeInput = parseInt(document.getElementById('zip_code_value').value);
+    deliveryPrice = zipCodes.filter(item => item.zip_code === zipCodeInput).map(item => item.delivery_price)[0];
+    updateCartInfo();
+}
 
 eventListeners();
 
@@ -13,6 +31,8 @@ function eventListeners() {
     window.addEventListener('DOMContentLoaded', () => {
         loadJSON();
         loadCart();
+        loadPromoCodes();
+        loadZipCodes();
     });
 
     // show cart container
@@ -37,7 +57,7 @@ function eventListeners() {
     });
 
     // hide cart container by clicking outside the div, on the backdrop
-    document.querySelector('.background_fade').addEventListener('click', function (e) {
+    document.querySelector('.cart_background_fade').addEventListener('click', function (e) {
         if (e.target === e.currentTarget) {
             document.getElementById('cart_close_btn').click();
         }
@@ -54,8 +74,11 @@ function eventListeners() {
 
 function updateCartInfo() {
     let cartInfo = calculateAmountAndPrice();
-    subtotalPrice.textContent = "$" + cartInfo.total;
     numberOfItemsInCart.textContent = cartInfo.bouquetsCount.toString();
+    subtotalPrice.textContent = "$" + cartInfo.total;
+    discountAmount.textContent = "$" + cartInfo.discount;
+    shippingPrice.textContent = "$" + cartInfo.shipping;
+    orderTotalPrice.textContent = "$" + cartInfo.orderTotal;
 }
 
 function loadJSON() {
@@ -90,6 +113,18 @@ function loadJSON() {
         })
 }
 
+function loadPromoCodes() {
+    $.getJSON('promo_codes.json', function (responseObject) {
+        promoCodes = responseObject;
+    })
+}
+
+function loadZipCodes() {
+    $.getJSON('zip_codes.json', function (responseObject) {
+        zipCodes = responseObject;
+    })
+}
+
 function loadCart() {
     let bouquets = getBouquetFromStorage();
     bouquets.forEach(bouquets => addToCartList(bouquets));
@@ -103,19 +138,35 @@ function calculateAmountAndPrice() {
             document.getElementById('cart_close_btn').click();
         }
     }
+    let totalAmount = bouquets.reduce((acc, bouquet) => {
+        return acc += bouquet.amount;
+    }, 0);
 
     let totalPrice = bouquets.reduce((acc, bouquet) => {
         let price = parseFloat(bouquet.price.substr(1)) * bouquet.amount;
         return acc += price;
     }, 0);
 
-    let totalAmount = bouquets.reduce((acc, bouquet) => {
-        return acc += bouquet.amount;
-    }, 0);
+    let discount = 0;
+    if (typeof bouquetDiscount !== "undefined") {
+        discount = totalPrice * (bouquetDiscount / 100);
+    }
 
+    let shipping = 0;
+    if (typeof deliveryPrice !== "undefined") {
+        if (typeof shippingDiscount !== "undefined" && shippingDiscount !== 0) {
+            shipping = deliveryPrice - (deliveryPrice * shippingDiscount) / 100;
+        } else {
+            shipping = deliveryPrice;
+        }
+    }
+    let orderTotal = totalPrice - discount + shipping;
     return {
+        bouquetsCount: totalAmount,
         total: totalPrice.toFixed(2),
-        bouquetsCount: totalAmount
+        discount: discount.toFixed(2),
+        shipping: shipping.toFixed(2),
+        orderTotal: orderTotal.toFixed(2),
     }
 }
 

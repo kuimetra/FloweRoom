@@ -1,0 +1,37 @@
+[
+  {
+    "promo_code": "FALL15",
+    "bouquets_discount": 15,
+    "shipping_discount": 50
+  },
+  {
+    "promo_code": "FREEXSHIP",
+    "bouquets_discount": 0,
+    "shipping_discount": 100
+  },
+  {
+    "promo_code": "15ROOM",
+    "bouquets_discount": 15,
+    "shipping_discount": 0
+  },
+  {
+    "promo_code": "FLOWEROOM10",
+    "bouquets_discount": 10,
+    "shipping_discount": 0
+  },
+  {
+    "promo_code": "PODCAST5",
+    "bouquets_discount": 5,
+    "shipping_discount": 0
+  },
+  {
+    "promo_code": "HOLIDAYS2021",
+    "bouquets_discount": 5,
+    "shipping_discount": 100
+  },
+  {
+    "promo_code": "GIFT8",
+    "bouquets_discount": 8,
+    "shipping_discount": 0
+  }
+]

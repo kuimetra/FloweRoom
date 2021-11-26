@@ -47,8 +47,8 @@ function eventListeners() {
 
 function updateCartInfo() {
     let cartInfo = calculateAmountAndPrice();
-    numberOfItemsInCart.textContent = cartInfo.bouquetsCount.toString();
     subtotalPrice.textContent = "$" + cartInfo.total;
+    numberOfItemsInCart.textContent = cartInfo.bouquetsCount.toString();
 }
 
 function loadJSON() {
@@ -91,19 +91,24 @@ function loadCart() {
 
 function calculateAmountAndPrice() {
     let bouquets = getBouquetFromStorage();
-    let amount = bouquets.length;
-    if (!amount) {
+    if (!bouquets.length) {
         if ($('.show_container').is(':visible')) {
             document.getElementById('cart_close_btn').click();
         }
     }
-    let total = bouquets.reduce((acc, bouquet) => {
+
+    let totalPrice = bouquets.reduce((acc, bouquet) => {
         let price = parseFloat(bouquet.price.substr(1)) * bouquet.amount;
         return acc += price;
     }, 0);
+
+    let totalAmount = bouquets.reduce((acc, bouquet) => {
+        return acc += bouquet.amount;
+    }, 0);
+
     return {
-        total: total.toFixed(2),
-        bouquetsCount: amount
+        total: totalPrice.toFixed(2),
+        bouquetsCount: totalAmount
     }
 }
 
@@ -122,7 +127,7 @@ function getBouquetInfo(bouquet) {
     let bouquetAlreadyExists = bouquets.some(e => e.id === bouquet.getAttribute("data-id"));
     if (bouquetAlreadyExists) {
         let obj = bouquets.find(e => e.id === bouquet.getAttribute("data-id"))
-        if (obj.amount < 100) {
+        if (obj.amount < 50) {
             obj.amount++;
             document.querySelector(`[data-id="${obj.id}"] input.product_quantity`).value = obj.amount;
             updateBouquetInStorage(bouquets);
@@ -222,7 +227,7 @@ function decrementBouquet(e) {
 function incrementBouquet(e) {
     let cartItem = e.target.parentElement.parentElement.parentElement;
     if (e.target.className === "expand_amount") {
-        if (e.target.parentElement.querySelector(`input.product_quantity`).value < 100) {
+        if (e.target.parentElement.querySelector(`input.product_quantity`).value < 50) {
             e.target.parentElement.querySelector(`input.product_quantity`).value++;
             let bouquets = getBouquetFromStorage();
             bouquets.forEach(bouquet => {

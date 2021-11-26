@@ -148,7 +148,7 @@ img {
 
 .counter_area {
     margin-left: 6px;
-    padding: 2px;
+    padding: 2px 1px;
     background: var(--white);
     border: 1px solid var(--blue);
     display: flex;

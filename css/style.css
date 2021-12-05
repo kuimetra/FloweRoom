@@ -111,7 +111,7 @@ img {
 }
 
 .links {
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--blue);
     position: relative;
 }
@@ -157,7 +157,7 @@ img {
 }
 
 #amount {
-    font: normal normal 20px/20px Gopher, serif;
+    font: normal normal 20px/20px Gopher, sans-serif;
     text-align: center;
     width: 48px;
     height: 20px;
@@ -212,7 +212,7 @@ img {
 }
 
 #cart_title {
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--blue);
     margin: 0 auto;
 }
@@ -242,7 +242,7 @@ img {
 }
 
 .cart_item_name {
-    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    font: normal normal 18px/18px GT Walsheim Pro, sans-serif;
     color: var(--blue);
 }
 
@@ -269,7 +269,7 @@ img {
 }
 
 .product_quantity {
-    font: normal normal 18px/18px Gopher, serif;
+    font: normal normal 18px/18px Gopher, sans-serif;
     color: var(--blue);
     width: 35px;
     height: 24px;
@@ -295,7 +295,7 @@ img {
 }
 
 .cart_item_price {
-    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    font: normal 300 20px/20px GT Walsheim Pro, sans-serif;
     color: var(--blue);
 }
 
@@ -304,7 +304,7 @@ img {
     width: 100%;
     background: var(--white);
     border: 1px solid var(--blue);
-    font: normal 300 18px/18px GT Walsheim Pro, serif;
+    font: normal 300 18px/18px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     padding: 11px 12px;
     margin-bottom: 3px;
@@ -315,7 +315,7 @@ img {
 }
 
 .apply_code {
-    font: normal 300 13px/13px GT Walsheim Pro, serif;
+    font: normal 300 13px/13px GT Walsheim Pro, sans-serif;
     color: var(--lightBlue);
     background: none;
     padding: 0 12px;
@@ -328,7 +328,7 @@ img {
 }
 
 #continue_shopping, #continue_btn {
-    font: normal 300 15px/15px GT Walsheim Pro, serif;
+    font: normal 300 15px/15px GT Walsheim Pro, sans-serif;
     color: var(--blue);
 }
 
@@ -344,7 +344,7 @@ img {
 }
 
 #cart_total {
-    font: normal 300 18px/18px GT Walsheim Pro, serif;
+    font: normal 300 18px/18px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     width: 100%;
     margin-bottom: 30px;
@@ -371,7 +371,7 @@ img {
     width: 100%;
     background-color: var(--blue);
     text-transform: uppercase;
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--white);
 }
 
@@ -390,14 +390,14 @@ img {
 }
 
 .hero_title {
-    font: normal normal 64px/67px Gopher, serif;
+    font: normal normal 64px/67px Gopher, sans-serif;
     color: var(--blue);
     max-width: 627px;
     margin-bottom: 10px;
 }
 
 .hero_text {
-    font: normal normal 22px/27px GT Walsheim Pro, serif;
+    font: normal normal 22px/27px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     max-width: 586px;
     margin-bottom: 19px;
@@ -408,7 +408,7 @@ img {
     padding: 8px 30px;
     background-color: var(--white);
     text-transform: uppercase;
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--blue);
 }
 
@@ -440,7 +440,7 @@ img {
 }
 
 .feature_title {
-    font: normal normal 40px/42px Gopher, serif;
+    font: normal normal 40px/42px Gopher, sans-serif;
     text-transform: capitalize;
     color: var(--green);
     position: absolute;
@@ -450,14 +450,14 @@ img {
 }
 
 .feature_subtitle {
-    font: normal normal 25px/25px Gopher, serif;
+    font: normal normal 25px/25px Gopher, sans-serif;
     color: var(--blue);
     max-width: 261px;
     margin-bottom: 5px;
 }
 
 .feature_text {
-    font: normal 300 19px/26px GT Walsheim Pro, serif;
+    font: normal 300 19px/26px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     max-width: 261px;
 }
@@ -490,7 +490,7 @@ img {
 }
 
 .bouquet_name {
-    font: normal normal 20px/20px GT Walsheim Pro, serif;
+    font: normal normal 20px/20px GT Walsheim Pro, sans-serif;
     text-transform: capitalize;
     color: var(--blue);
 }
@@ -504,7 +504,7 @@ img {
 }
 
 .price {
-    font: normal 300 22px/22px GT Walsheim Pro, serif;
+    font: normal 300 22px/22px GT Walsheim Pro, sans-serif;
     text-align: center;
     width: 53px;
     height: 22px;
@@ -536,7 +536,7 @@ img {
     display: flex;
     position: absolute;
     justify-content: center;
-    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    font: normal normal 18px/18px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     width: 100%;
     padding: 7px 0;
@@ -603,7 +603,7 @@ img {
 }
 
 .info_title {
-    font: normal normal 36px/36px Gopher, serif;
+    font: normal normal 36px/36px Gopher, sans-serif;
     text-transform: capitalize;
     color: var(--brightPink);
     margin-bottom: 8px;
@@ -611,7 +611,7 @@ img {
 
 .info_text {
     max-width: 627px;
-    font: normal 300 20px/29px GT Walsheim Pro, serif;
+    font: normal 300 20px/29px GT Walsheim Pro, sans-serif;
     color: var(--blue);
 }
 
@@ -674,7 +674,7 @@ img {
 }
 
 .info_subtitle {
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     text-transform: capitalize;
     color: var(--blue);
     margin-right: 30px;
@@ -685,7 +685,7 @@ img {
     padding: 8px 30px;
     background-color: var(--blue);
     text-transform: uppercase;
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--white);
     -webkit-transition: background-color 0.3s linear, color 0.3s linear;
 }
@@ -713,7 +713,7 @@ img {
 }
 
 .promo_code_text {
-    font: normal normal 22px/22px Gopher, serif;
+    font: normal normal 22px/22px Gopher, sans-serif;
     color: var(--blue);
     text-align: center;
 }
@@ -728,7 +728,7 @@ img {
 }
 
 .instagram_title {
-    font: normal normal 36px/36px Gopher, serif;
+    font: normal normal 36px/36px Gopher, sans-serif;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -736,7 +736,7 @@ img {
 }
 
 .instagram_text {
-    font: normal 300 22px/22px GT Walsheim Pro, serif;
+    font: normal 300 22px/22px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     margin-bottom: 20px;
     text-align: center;
@@ -787,7 +787,7 @@ img {
     padding: 8px 30px;
     background-color: var(--brightPink);
     text-transform: uppercase;
-    font: normal normal 24px/24px Gopher, serif;
+    font: normal normal 24px/24px Gopher, sans-serif;
     color: var(--white);
     -webkit-transition: background-color 0.3s linear, color 0.3s linear;
 }
@@ -827,20 +827,20 @@ img {
 }
 
 .mail_subscription_title {
-    font: normal normal 36px/36px Gopher, serif;
+    font: normal normal 36px/36px Gopher, sans-serif;
     text-transform: capitalize;
     color: var(--green);
     margin-bottom: 10px;
 }
 
 .mail_subscription_subtitle {
-    font: normal normal 22px/22px GT Walsheim Pro, serif;
+    font: normal normal 22px/22px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     margin-bottom: 15px;
 }
 
 .mail_subscription_text {
-    font: italic 300 13px/13px GT Walsheim Pro, serif;
+    font: italic 300 13px/13px GT Walsheim Pro, sans-serif;
     color: var(--lightBlue);
 }
 
@@ -851,17 +851,17 @@ img {
 }
 
 ::-webkit-input-placeholder { /* Edge */
-    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    font: normal 300 20px/20px GT Walsheim Pro, sans-serif;
     color: var(--gray);
 }
 
 :-ms-input-placeholder { /* Internet Explorer */
-    font: normal 300 20px/20px GT Walsheim Pro, serif;
+    font: normal 300 20px/20px GT Walsheim Pro, sans-serif;
     color: var(--gray);
 }
 
 ::placeholder {
-    font: normal 300 20px/22px GT Walsheim Pro, serif;
+    font: normal 300 20px/22px GT Walsheim Pro, sans-serif;
     color: var(--gray);
 }
 
@@ -873,7 +873,7 @@ input:focus {
     width: 360px;
     background: var(--white);
     border: 1px solid var(--blue);
-    font: normal 300 20px/22px GT Walsheim Pro, serif;
+    font: normal 300 20px/22px GT Walsheim Pro, sans-serif;
     color: var(--blue);
     padding: 8px 12px;
     margin-right: 30px;
@@ -896,19 +896,19 @@ footer {
 }
 
 .footer_link {
-    font: normal normal 20px/20px GT Walsheim Pro, serif;
+    font: normal normal 20px/20px GT Walsheim Pro, sans-serif;
     color: var(--white);
 }
 
 .support {
-    font: normal normal 16px/16px GT Walsheim Pro, serif;
+    font: normal normal 16px/16px GT Walsheim Pro, sans-serif;
     text-transform: capitalize;
     color: var(--white);
     margin: 10px 0 13px;
 }
 
 .contacts {
-    font: normal normal 18px/18px GT Walsheim Pro, serif;
+    font: normal normal 18px/18px GT Walsheim Pro, sans-serif;
     color: var(--white);
     display: block;
 }
@@ -952,7 +952,7 @@ hr {
 }
 
 .copyrights_info {
-    font: normal 300 16px/16px GT Walsheim Pro, serif;
+    font: normal 300 16px/16px GT Walsheim Pro, sans-serif;
     color: var(--white);
 }
 

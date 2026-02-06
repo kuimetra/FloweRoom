@@ -604,7 +604,6 @@ img {
 
 .info_title {
     font: normal normal 36px/36px Gopher, sans-serif;
-    text-transform: capitalize;
     color: var(--brightPink);
     margin-bottom: 8px;
 }
@@ -675,7 +674,6 @@ img {
 
 .info_subtitle {
     font: normal normal 24px/24px Gopher, sans-serif;
-    text-transform: capitalize;
     color: var(--blue);
     margin-right: 30px;
 }
@@ -828,7 +826,6 @@ img {
 
 .mail_subscription_title {
     font: normal normal 36px/36px Gopher, sans-serif;
-    text-transform: capitalize;
     color: var(--green);
     margin-bottom: 10px;
 }
